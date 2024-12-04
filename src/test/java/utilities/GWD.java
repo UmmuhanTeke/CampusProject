@@ -41,7 +41,7 @@ public class GWD {
     public static void tearDown() {
 
         try {
-            Thread.sleep(5);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
