@@ -27,6 +27,11 @@ public class ReusableMethods {
         element.sendKeys(text);
     }
 
+    public void hoverOver(WebElement element){
+        wait.until(ExpectedConditions.visibilityOf(element));
+        new Actions(GWD.getDriver()).moveToElement(element).perform();
+    }
+
     public void scrollToElement(WebElement elements) {
         JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
         js.executeScript("arguments[0].scrollIntoView();", elements);
