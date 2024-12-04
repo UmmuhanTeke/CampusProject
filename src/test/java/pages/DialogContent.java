@@ -21,6 +21,9 @@ public class DialogContent extends ReusableMethods {
     @FindBy(css = "button[aria-label='LOGIN']")
     public WebElement loginBtn;
 
+    @FindBy(xpath = "//span[text()=' Welcome, Student_6 11A ! ']")
+    public WebElement loginControl;
+
     @FindBy(xpath = "//span[text()=' New Message ']")
     public WebElement newMsgText;
 
