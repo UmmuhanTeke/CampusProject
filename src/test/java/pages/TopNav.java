@@ -4,9 +4,9 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.GWD;
 import utilities.ReusableMethods;
 
-public class LeftNav extends ReusableMethods {
+public class TopNav extends ReusableMethods {
 
-    public LeftNav() {
+    public TopNav() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
