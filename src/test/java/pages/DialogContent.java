@@ -24,15 +24,7 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//span[text()=' Welcome, Student_6 11A ! ']")
     public WebElement loginControl;
 
-    @FindBy(xpath = "//span[text()=' New Message ']")
-    public WebElement newMsgText;
+    @FindBy(xpath = "(//mat-drawer-content[@class='mat-drawer-content']//div)[3]")
+    public WebElement msgSubMenuControl;
 
-    @FindBy(xpath = "//span[text()=' Inbox ']")
-    public WebElement inboxText;
-
-    @FindBy(xpath = "//span[text()=' Outbox ']")
-    public WebElement outboxText;
-
-    @FindBy(xpath = "//span[text()=' Trash ']")
-    public WebElement trashText;
 }
