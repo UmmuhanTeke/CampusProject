@@ -12,6 +12,15 @@ public class DialogContent extends ReusableMethods {
         PageFactory.initElements(GWD.getDriver() ,this);
     }
 
+    @FindBy(css = "input[formcontrolname='username']")
+    public WebElement usernameInput;
+
+    @FindBy(css = "input[formcontrolname='password']")
+    public WebElement passwordInput;
+
+    @FindBy(css = "button[aria-label='LOGIN']")
+    public WebElement loginBtn;
+
     @FindBy(xpath = "//span[text()=' New Message ']")
     public WebElement newMsgText;
 
