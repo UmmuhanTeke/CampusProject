@@ -12,7 +12,7 @@ public class GWD {
     private static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<>();
     public static ThreadLocal<String> threadBrowserName = new ThreadLocal<>();
 
-    public static org.openqa.selenium.WebDriver getDriver() {
+    public static WebDriver getDriver() {
         Locale.setDefault(new Locale("EN"));
         System.setProperty("user.language", "EN");
 
