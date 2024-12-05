@@ -23,4 +23,7 @@ public class TopNav extends ReusableMethods {
     @FindBy(xpath = "(//div[@class='cdk-overlay-pane'])[2]//button")
     public List<WebElement> msgSubMenuList;
 
+    @FindBy(xpath = "//span[text()='Send Message']")
+    public WebElement sendMsgBtn;
+
 }
