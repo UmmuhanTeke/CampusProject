@@ -6,6 +6,8 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.GWD;
 import utilities.ReusableMethods;
 
+import java.util.List;
+
 public class TopNav extends ReusableMethods {
 
     public TopNav() {
@@ -18,15 +20,7 @@ public class TopNav extends ReusableMethods {
     @FindBy(xpath = "//span[text()='Messaging']")
     public WebElement messagingBtn;
 
-    @FindBy(xpath = "//span[text()='Send Message']")
-    public WebElement sendMsgBtn;
+    @FindBy(xpath = "(//div[@class='cdk-overlay-pane'])[2]//button")
+    public List<WebElement> msgSubMenuList;
 
-    @FindBy(xpath = "//span[text()='Inbox']")
-    public WebElement inboxBtn;
-
-    @FindBy(xpath = "//span[text()='Outbox']")
-    public WebElement outboxBtn;
-
-    @FindBy(xpath = "//span[text()='Trash']")
-    public WebElement trashBtn;
 }
