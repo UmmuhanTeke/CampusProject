@@ -1,15 +1,19 @@
 package stepDefinitions;
 
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
+import io.reactivex.rxjava3.exceptions.Exceptions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import pages.DialogContent;
 import pages.TopNav;
 import utilities.ConfigReader;
 import utilities.GWD;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-
 
 public class MessagingSubMenu {
      DialogContent dialogContentElement=new DialogContent();
@@ -40,25 +44,17 @@ public class MessagingSubMenu {
     @When("The user hovers over the messaging link")
     public void theUserHoversOverTheMessagingLink() {
         topNavElement.hoverOver(topNavElement.messagingBtn);
+        topNavElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.sendMsgBtn));
     }
 
     @Then("The user clicks on the buttons and verifies")
     public void theUserClicksOnTheButtonsAndVerifies() {
-//        topNavElement.myClick(topNavElement.sendMsgBtn);
-//        System.out.println(dialogContentElement.msgSubMenuControl.getText());
-//        System.out.println(GWD.getDriver().getCurrentUrl());
-//        Assert.assertTrue(GWD.getDriver().getCurrentUrl().contains("new"));
-//        topNavElement.myClick(topNavElement.hamburgerMenu);
-//        topNavElement.hoverOver(topNavElement.messagingBtn);
-//        topNavElement.myClick(topNavElement.inboxBtn);
-//        topNavElement.verifyContainsText(dialogContentElement.msgSubMenuControl," Inbox ");
-//        topNavElement.myClick(topNavElement.hamburgerMenu);
-//        topNavElement.hoverOver(topNavElement.messagingBtn);
-//        topNavElement.myClick(topNavElement.outboxBtn);
-//        topNavElement.verifyContainsText(dialogContentElement.msgSubMenuControl," Outbox ");
-//        topNavElement.myClick(topNavElement.hamburgerMenu);
-//        topNavElement.hoverOver(topNavElement.messagingBtn);
-//        topNavElement.myClick(topNavElement.trashBtn);
-//        topNavElement.verifyContainsText(dialogContentElement.msgSubMenuControl," Trash ");
+        for (int i = 0; i < topNavElement.msgSubMenuList.size(); i++) {
+            topNavElement.myClick(topNavElement.msgSubMenuList.get(i));
+            topNavElement.myClick(topNavElement.hamburgerMenu);
+            dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.textControl));
+            topNavElement.hoverOver(topNavElement.messagingBtn);
+            Assert.assertTrue(topNavElement.msgSubMenuList.get(i).isDisplayed());
+        }
     }
 }
