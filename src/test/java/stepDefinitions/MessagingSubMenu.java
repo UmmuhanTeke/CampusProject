@@ -8,6 +8,10 @@ import pages.TopNav;
 import utilities.ConfigReader;
 import utilities.GWD;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class MessagingSubMenu {
      DialogContent dialogContentElement=new DialogContent();
      TopNav topNavElement=new TopNav();
@@ -42,10 +46,13 @@ public class MessagingSubMenu {
 
     @Then("The user clicks on the buttons and verifies")
     public void theUserClicksOnTheButtonsAndVerifies() {
+        List<String> containsURL =new ArrayList<>();
+        Collections.addAll(containsURL,"new","inbox","outbox","trash");
+
         for (int i = 0; i < topNavElement.msgSubMenuList.size(); i++) {
             topNavElement.myClick(topNavElement.msgSubMenuList.get(i));
             topNavElement.myClick(topNavElement.hamburgerMenu);
-            dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.textControl));
+            dialogContentElement.wait.until(ExpectedConditions.urlContains(containsURL.get(i)));
             topNavElement.hoverOver(topNavElement.messagingBtn);
             Assert.assertTrue(topNavElement.msgSubMenuList.get(i).isDisplayed());
         }
