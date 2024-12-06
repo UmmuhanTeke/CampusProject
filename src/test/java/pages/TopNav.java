@@ -29,4 +29,11 @@ public class TopNav extends ReusableMethods {
     @FindBy(xpath = "//div[@fxlayout='row']/div/img")
     public WebElement homepageLogo;
 
+    public WebElement getWebElement(String strElementName) {
+
+        switch (strElementName) {
+            case "sendMessage": return this.sendMsgBtn;
+        }
+        return null;
+    }
 }
