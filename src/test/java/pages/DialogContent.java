@@ -47,6 +47,21 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//span[text()=' Students Fees '] ")
     public WebElement myFinancePageVerify;
 
+    @FindBy(xpath = "(//span[@class='mat-mdc-menu-item-text'])[10]")
+    public WebElement trashBoxBtn;
+
+    @FindBy(xpath = "(//button[contains(@aria-describedby,'cdk-describedby-message')])[5]")
+    public WebElement deleteIcon;
+
+    @FindBy(xpath = "(//button[@matbadgecolor='accent'])[3]")
+    public WebElement restoreIcon;
+
+    @FindBy(xpath = "//div[contains(text(), 'Message successfully')]")
+    public WebElement msgControl;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement deleteBtn;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
