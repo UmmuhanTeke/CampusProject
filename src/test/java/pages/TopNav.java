@@ -26,4 +26,7 @@ public class TopNav extends ReusableMethods {
     @FindBy(xpath = "//span[text()='Send Message']")
     public WebElement sendMsgBtn;
 
+    @FindBy(xpath = "//div[@fxlayout='row']/div/img")
+    public WebElement homepageLogo;
+
 }
