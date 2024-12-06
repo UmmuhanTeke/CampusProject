@@ -12,7 +12,7 @@ Feature: Messaging Send Message Functionality
       | sendMessage |
 
     When  The user types and selects the receivers by clicking on the Add Receivers icon
-      | usernameBox | teacher |
+      | usernameBox | student |
 
     And  The user selects the message types and types the subject for it
     And  The user types the message text and uploads the file by clicking on the Attach Files button

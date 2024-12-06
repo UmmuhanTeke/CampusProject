@@ -38,11 +38,35 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//div[@class='mdc-checkbox']")
     public List<WebElement>checkBoxList;
 
-    @FindBy(xpath = "//td[text()='Teacher_1 T1']")
-    public WebElement teacherTextControl;
+    @FindBy(xpath = "//span[@class='mdc-evolution-chip__text-label mat-mdc-chip-action-label']")
+    public WebElement studentTextControl;
 
     @FindBy(xpath = "//span[text()='Add & Close']")
     public WebElement addAndCloseBtn;
+
+    @FindBy(xpath = "//mat-select[@role='combobox']")
+    public WebElement selectBtn;
+
+    @FindBy(xpath = "//mat-option[@value='EMAIL']")
+    public WebElement emailBtn;
+
+    @FindBy(xpath = "//div[contains(text(),'successfully')]")
+    public WebElement successMsg;
+
+    @FindBy(css = "input[placeholder='Subject']")
+    public WebElement subjectBox;
+
+    @FindBy(css = "body[id='tinymce']")
+    public WebElement textBox;
+
+    @FindBy(xpath = "//ms-button[@class='mat-mdc-menu-trigger']/button")
+    public WebElement attachFileBtn;
+
+    @FindBy(xpath = "//span[text()='From My Files']")
+    public WebElement myFilesBtn;
+
+    @FindBy(xpath = "//span[text()='Select']")
+    public WebElement selectButton;
 
     public WebElement getWebElement(String strElementName) {
 
