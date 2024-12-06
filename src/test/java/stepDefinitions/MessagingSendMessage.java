@@ -84,6 +84,7 @@ public class MessagingSendMessage {
 
     @And("The user clicks on the save button and verifies the confirmation message")
     public void theUserClicksOnTheSaveButtonAndVerifiesTheConfirmationMessage() {
+
     }
 
     @When("The user click outbox message and verifies the outbox message list")
