@@ -6,6 +6,8 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.GWD;
 import utilities.ReusableMethods;
 
+import java.util.List;
+
 public class DialogContent extends ReusableMethods {
 
     public DialogContent() {
@@ -26,5 +28,28 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "(//mat-drawer-content[@class='mat-drawer-content']//span)[5]")
     public WebElement textControl;
+
+    @FindBy(xpath = "(//span[@class='mat-focus-indicator'])[17]")
+    public WebElement addReceiver;
+
+    @FindBy(xpath = "//input[@placeholder='Name, Username or E-mail']")
+    public WebElement usernameBox;
+
+    @FindBy(xpath = "//div[@class='mdc-checkbox']")
+    public List<WebElement>checkBoxList;
+
+    @FindBy(xpath = "(//td[contains(text(),'Teacher')])[1]")
+    public WebElement teacherTextControl;
+
+    @FindBy(xpath = "//span[text()='Add & Close']")
+    public WebElement addAndCloseBtn;
+
+    public WebElement getWebElement(String strElementName) {
+
+        switch (strElementName) {
+            case "usernameBox": return this.usernameBox;
+        }
+        return null;
+    }
 
 }
