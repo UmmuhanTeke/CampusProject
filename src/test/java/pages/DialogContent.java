@@ -44,6 +44,9 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//span[text()='Add & Close']")
     public WebElement addAndCloseBtn;
 
+    @FindBy(xpath = "//span[text()=' Students Fees '] ")
+    public WebElement myFinancePageVerify;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
@@ -51,5 +54,4 @@ public class DialogContent extends ReusableMethods {
         }
         return null;
     }
-
 }
