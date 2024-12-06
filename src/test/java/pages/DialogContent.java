@@ -38,35 +38,29 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//div[@class='mdc-checkbox']")
     public List<WebElement>checkBoxList;
 
-    @FindBy(xpath = "//span[@class='mdc-evolution-chip__text-label mat-mdc-chip-action-label']")
-    public WebElement studentTextControl;
+    @FindBy(xpath = "//td[text()='Teacher_1 T1']")
+    public WebElement teacherTextControl;
 
     @FindBy(xpath = "//span[text()='Add & Close']")
     public WebElement addAndCloseBtn;
 
-    @FindBy(xpath = "//mat-select[@role='combobox']")
-    public WebElement selectBtn;
+    @FindBy(xpath = "//span[text()=' Students Fees '] ")
+    public WebElement myFinancePageVerify;
 
-    @FindBy(xpath = "//mat-option[@value='EMAIL']")
-    public WebElement emailBtn;
+    @FindBy(xpath = "(//span[@class='mat-mdc-menu-item-text'])[10]")
+    public WebElement trashBoxBtn;
 
-    @FindBy(xpath = "//div[contains(text(),'successfully')]")
-    public WebElement successMsg;
+    @FindBy(xpath = "(//button[contains(@aria-describedby,'cdk-describedby-message')])[5]")
+    public WebElement deleteIcon;
 
-    @FindBy(css = "input[placeholder='Subject']")
-    public WebElement subjectBox;
+    @FindBy(xpath = "(//button[@matbadgecolor='accent'])[3]")
+    public WebElement restoreIcon;
 
-    @FindBy(css = "body[id='tinymce']")
-    public WebElement textBox;
+    @FindBy(xpath = "//div[contains(text(), 'Message successfully')]")
+    public WebElement msgControl;
 
-    @FindBy(xpath = "//ms-button[@class='mat-mdc-menu-trigger']/button")
-    public WebElement attachFileBtn;
-
-    @FindBy(xpath = "//span[text()='From My Files']")
-    public WebElement myFilesBtn;
-
-    @FindBy(xpath = "//span[text()='Select']")
-    public WebElement selectButton;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement deleteBtn;
 
     public WebElement getWebElement(String strElementName) {
 
@@ -75,5 +69,4 @@ public class DialogContent extends ReusableMethods {
         }
         return null;
     }
-
 }
