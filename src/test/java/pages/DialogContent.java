@@ -38,7 +38,7 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//div[@class='mdc-checkbox']")
     public List<WebElement>checkBoxList;
 
-    @FindBy(xpath = "(//td[contains(text(),'Teacher')])[1]")
+    @FindBy(xpath = "//td[text()='Teacher_1 T1']")
     public WebElement teacherTextControl;
 
     @FindBy(xpath = "//span[text()='Add & Close']")
