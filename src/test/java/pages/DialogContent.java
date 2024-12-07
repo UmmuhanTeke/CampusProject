@@ -113,6 +113,18 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "(//tbody[@role='rowgroup']/tr)[1]")
     public WebElement outboxMsgControl;
 
+    @FindBy(xpath = "//ms-confirm-button[@icon='shopping-basket']/button")
+    public List<WebElement> moveToTrashIcon;
+
+    @FindBy(xpath = "//mat-dialog-actions//button")
+    public WebElement yesButton;
+
+    @FindBy(xpath = "//strong[text()='Confirm']")
+    public WebElement confirmTitleText;
+
+    @FindBy(xpath = "//*[contains(text(),'move this message')]")
+    public WebElement confirmTextSentence;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
