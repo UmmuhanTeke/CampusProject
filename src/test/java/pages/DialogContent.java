@@ -134,6 +134,21 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "(//div[contains(@id, 'mat-tab-group-4-label')])[2]")
     public WebElement feeBalanceButton;
 
+    @FindBy(xpath = "//input[@value='STRIPE'] ")
+    public WebElement stripeButton;
+
+    @FindBy(xpath = "(//input[@class='mdc-radio__native-control'])[3]")
+    public WebElement paymentCreateOption;
+
+    @FindBy(xpath = "//input[@value='CUSTOM_AMOUNT']")
+    public WebElement payOption;
+
+    @FindBy(xpath = "//input[contains(@id, 'ms-currency-field')]")
+    public WebElement amountBox;
+
+    @FindBy(xpath = "(//span[@class='ng-star-inserted'])[5]")
+    public WebElement payButton;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
