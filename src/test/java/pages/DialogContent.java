@@ -92,6 +92,12 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "(//div[@class='cdk-overlay-pane']//button)[1]")
     public WebElement excelBtn;
 
+    @FindBy(xpath = "//div[@class='cdk-drop-list']")
+    public WebElement fileControl;
+
+    @FindBy(xpath = "//td[@role='cell']")
+    public WebElement studentControl;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
