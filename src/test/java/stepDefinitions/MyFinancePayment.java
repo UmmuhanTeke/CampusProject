@@ -1,11 +1,21 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
+import pages.DialogContent;
+import pages.TopNav;
+import utilities.ConfigReader;
+import utilities.GWD;
 
 public class MyFinancePayment {
+    DialogContent dialogContentElement=new DialogContent();
+    TopNav topNavElement=new TopNav();
 
     @Given("The user has been redirected to the payment page")
     public void theUserHasBeenRedirectedToThePaymentPage() {
+        dialogContentElement.wait.until(ExpectedConditions.urlToBe(ConfigReader.getProperty("myFinanceURL")));
+        Assert.assertTrue(GWD.getDriver().getCurrentUrl().equals(ConfigReader.getProperty("myFinanceURL")));
     }
 
     @Then("The user views the Online Payment and Fee Balance Detail buttons")
