@@ -1,7 +1,7 @@
 Feature: Login Functionality
 
   Scenario: Login with invalid username and password
-  Given Navigate to campus
+    Given Navigate to Campus
     When The user types invalid username and password
     And The user clicks on the login button
     Then The user verifies warning message
