@@ -44,7 +44,7 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//span[text()=' Students Fees '] ")
     public WebElement myFinancePageVerify;
 
-    @FindBy(xpath = "(//span[@class='mat-mdc-menu-item-text'])[10]")
+    @FindBy(xpath = "//span[text()='Trash']")
     public WebElement trashBoxBtn;
 
     @FindBy(xpath = "//ms-delete-button/button")
