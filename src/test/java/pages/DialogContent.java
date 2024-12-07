@@ -104,8 +104,11 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//span[text()='Send']")
     public WebElement sendBtn;
 
-    @FindBy(xpath = "//div[text()='Message Successfully sent']")
+    @FindBy(xpath = "//div[contains(text(),'Message Successfully sent')]")
     public WebElement sendConfirmMessage;
+
+    @FindBy(xpath = "(//tbody[@role='rowgroup']/tr)[1]")
+    public WebElement outboxMsgControl;
 
     public WebElement getWebElement(String strElementName) {
 
