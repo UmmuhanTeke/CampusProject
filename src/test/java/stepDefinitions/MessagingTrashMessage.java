@@ -17,6 +17,7 @@ public class MessagingTrashMessage {
     @Then("The user should display Delete and Restore options for each message")
     public void theUserShouldDisplayDeleteAndRestoreOptionsForEachMessage() {
         dialogContentElement.wait.until(ExpectedConditions.urlContains("trash"));
+        dialogContentElement.wait.until(ExpectedConditions.elementToBeClickable(dialogContentElement.deleteIcon));
         dialogContentElement.deleteIcon.isDisplayed();
         dialogContentElement.restoreIcon.isDisplayed();
     }
@@ -43,6 +44,6 @@ public class MessagingTrashMessage {
 
     @Then("The message should be permanently deleted with a Success message")
     public void theMessageShouldBePermanentlyDeletedWithAMessage() {
-        Assert.assertTrue(dialogContentElement.msgControl.getText().contains("Message successfully"));
+        dialogContentElement.verifyContainsText(dialogContentElement.msgControl,"Message successfully");
     }
 }
