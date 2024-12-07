@@ -45,10 +45,7 @@ public class FinanceReport {
 
         File downloadFolder = new File(downloadDir);
         File[] files = downloadFolder.listFiles((dir, name) -> name.endsWith(".xlsx"));
-        if (files != null && files.length > 0) {
-            System.out.println("File downloaded successfully: " + files[0].getName());
-        } else {
-            System.out.println("File not found!");
-        }
+        Assert.assertNotNull(files);
+        Assert.assertTrue(files.length > 0);
     }
 }
