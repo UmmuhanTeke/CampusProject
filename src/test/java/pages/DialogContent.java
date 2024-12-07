@@ -47,10 +47,10 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "(//span[@class='mat-mdc-menu-item-text'])[10]")
     public WebElement trashBoxBtn;
 
-    @FindBy(xpath = "(//button[contains(@aria-describedby,'cdk-describedby-message')])[5]")
+    @FindBy(xpath = "(//button[contains(@aria-describedby,'cdk-describedby-message')])[10]")
     public WebElement deleteIcon;
 
-    @FindBy(xpath = "(//button[@matbadgecolor='accent'])[3]")
+    @FindBy(xpath = "(//button[@matbadgecolor='accent'])[4]")
     public WebElement restoreIcon;
 
     @FindBy(xpath = "//div[contains(text(), 'Message successfully')]")
