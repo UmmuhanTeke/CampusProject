@@ -49,6 +49,7 @@ public class MessagingSendMessage {
                 dialogContentElement.mySendKeys(box, sendKey.get(i).get(1));
             }
 
+            dialogContentElement.wait.until(ExpectedConditions.elementToBeClickable(dialogContentElement.studentControl));
             int randomIndex = random.nextInt(dialogContentElement.checkBoxList.size()) + 1;
             dialogContentElement.myClick(dialogContentElement.checkBoxList.get(randomIndex));
             dialogContentElement.myClick(dialogContentElement.addAndCloseBtn);
@@ -77,8 +78,10 @@ public class MessagingSendMessage {
 
         dialogContentElement.myClick(dialogContentElement.attachFileBtn);
         dialogContentElement.myClick(dialogContentElement.myFilesBtn);
+
+        dialogContentElement.wait.until(ExpectedConditions.elementToBeClickable(dialogContentElement.fileControl));
         int indexRandom = random.nextInt(dialogContentElement.checkBoxList.size()) + 1;
-        dialogContentElement.myClick(dialogContentElement.checkBoxList.get(indexRandom));
+        dialogContentElement.jsClick(dialogContentElement.checkBoxList.get(indexRandom));
         dialogContentElement.myClick(dialogContentElement.selectButton);
     }
 
