@@ -1,9 +1,9 @@
 Feature: Finance Report Management
 
   Background:
-    Given Navigate to campus
-    When  Enter username and password and click login button
-    Then  User should login successfully
+    Given Navigate to Campus
+    When The user types username and password and click login button
+    Then The user verifies login successfully
 
   Scenario: Accessing and downloading finance reports
 
