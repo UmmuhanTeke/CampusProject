@@ -125,6 +125,15 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//*[contains(text(),'move this message')]")
     public WebElement confirmTextSentence;
 
+    @FindBy(xpath = "//div[@fxlayout='column']/div")
+    public WebElement studentButton;
+
+    @FindBy(xpath = "//div[contains(@id, 'mat-tab-group-4-label')]")
+    public WebElement onlinePaymentButton;
+
+    @FindBy(xpath = "(//div[contains(@id, 'mat-tab-group-4-label')])[2]")
+    public WebElement feeBalanceButton;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
