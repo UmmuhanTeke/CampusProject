@@ -25,8 +25,8 @@ public class FinanceReport {
 
     @Then("The user should access the finance page")
     public void theUserShouldAccessTheFinancePage() {
-        dialogContentElement.wait.until(ExpectedConditions.urlToBe(ConfigReader.getProperty("financeURL")));
-        Assert.assertTrue(GWD.getDriver().getCurrentUrl().equals(ConfigReader.getProperty("financeURL")));
+        dialogContentElement.wait.until(ExpectedConditions.urlToBe(ConfigReader.getProperty("myFinanceURL")));
+        Assert.assertTrue(GWD.getDriver().getCurrentUrl().equals(ConfigReader.getProperty("myFinanceURL")));
     }
 
     @When("The user clicks on the Overflow menu for report types")
