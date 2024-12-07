@@ -95,8 +95,17 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//div[@class='cdk-drop-list']")
     public WebElement fileControl;
 
-    @FindBy(xpath = "//td[@role='cell']")
+    @FindBy(xpath = "(//td[@role='cell'])[1]")
     public WebElement studentControl;
+
+    @FindBy(xpath = "//div[@class='attachment ng-star-inserted']")
+    public WebElement appearFileControl;
+
+    @FindBy(xpath = "//span[text()='Send']")
+    public WebElement sendBtn;
+
+    @FindBy(xpath = "//div[text()='Message Successfully sent']")
+    public WebElement sendConfirmMessage;
 
     public WebElement getWebElement(String strElementName) {
 
