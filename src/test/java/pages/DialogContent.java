@@ -86,6 +86,12 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//span[text()='Select']")
     public WebElement selectButton;
 
+    @FindBy(xpath = "(//button[@aria-haspopup='menu'])[7]")
+    public WebElement overFlowMenuBtn;
+
+    @FindBy(xpath = "(//div[@class='cdk-overlay-pane']//button)[1]")
+    public WebElement excelBtn;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
