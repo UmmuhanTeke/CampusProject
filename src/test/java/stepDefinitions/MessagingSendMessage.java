@@ -24,7 +24,7 @@ public class MessagingSendMessage {
     Random random = new Random();
     Faker faker = new Faker();
 
-    @When("The user click send message")
+    @When("The user clicks send message")
     public void theUserClickSendMessage(DataTable dtBtn) {
         List<String> btn = dtBtn.asList();
 
@@ -95,7 +95,7 @@ public class MessagingSendMessage {
         dialogContentElement.verifyContainsText(dialogContentElement.sendConfirmMessage, "Successfully");
     }
 
-    @When("The user click outbox message and verifies the outbox message list")
+    @When("The user clicks outbox message and verifies the outbox message list")
     public void theUserClickOutboxMessageAndVerifiesTheOutboxMessageList(DataTable dtBtn) {
         List<String> btn = dtBtn.asList();
 
