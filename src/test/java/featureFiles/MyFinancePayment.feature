@@ -12,7 +12,6 @@ Feature:Payment Functionality
     Then  The user checks that they are redirected to the My Finance page
 
   Scenario:Payment Feature on My Finance Page
-
     Given The user has been redirected to the payment page
     Then  The user views the Online Payment and Fee Balance Detail buttons
     And   The user clicks the Stripe button

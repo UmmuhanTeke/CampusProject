@@ -6,7 +6,6 @@ Feature:Homepage Logo Functionality
     Then  The user verifies login successfully
 
   Scenario:Homepage Logo Check
-
     Given The user is on the Campus homepage
     And   The user Techno Study website logo is displayed in the top left corner
     When  The user clicks on the Techno Study website logo

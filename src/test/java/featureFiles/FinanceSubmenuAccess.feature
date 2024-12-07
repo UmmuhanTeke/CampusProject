@@ -6,7 +6,6 @@ Feature:Hamburger Menu Functionality
     Then  The user verifies login successfully
 
   Scenario:Finance Submenu Access
-
     Given The user is on the Campus homepage
     And   The user clicks on the Hamburger menu
     Then  The user views the submenus in the Hamburger menu
