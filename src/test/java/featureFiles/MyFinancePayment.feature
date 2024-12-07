@@ -1,9 +1,9 @@
 Feature:Payment Functionality
 
   Background:
-    Given Navigate to campus
-    When  Enter username and password and click login button
-    Then  User should login successfully
+    Given Navigate to Campus
+    When  The user types username and password and click login button
+    Then  The user verifies login successfully
     And   The user clicks on the Hamburger menu
     Then  The user views the submenus in the Hamburger menu
     And   The user hovers over the Finance button in the Hamburger menu

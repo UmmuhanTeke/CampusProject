@@ -14,20 +14,8 @@ public class HomepageLogoCheck {
     DialogContent dialogContentElement = new DialogContent();
     TopNav topNavElement = new TopNav();
 
-    @Given("The user navigates to the Campus website")
+    @Given("The user is on the Campus homepage")
     public void theUserNavigatesToTheCampusWebsite() {
-        GWD.getDriver().get(ConfigReader.getProperty("URL"));
-    }
-
-    @When("The user logs in to the system with a valid username and password")
-    public void theUserLogsInToTheSystemWithAValidUsernameAndPassword() {
-        dialogContentElement.mySendKeys(dialogContentElement.usernameInput, ConfigReader.getProperty("username"));
-        dialogContentElement.mySendKeys(dialogContentElement.passwordInput, ConfigReader.getProperty("password"));
-        dialogContentElement.myClick(dialogContentElement.loginBtn);
-    }
-
-    @Then("The user verifies that they have successfully logged into the Campus website")
-    public void theUserVerifiesLoggedInSuccessfully() {
         dialogContentElement.verifyContainsText(dialogContentElement.loginControl, "Welcome,");
     }
 
