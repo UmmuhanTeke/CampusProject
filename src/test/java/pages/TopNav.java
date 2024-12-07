@@ -38,6 +38,9 @@ public class TopNav extends ReusableMethods {
     @FindBy(xpath = "//span[text()='My Finance']")
     public WebElement myFinanceButton;
 
+    @FindBy(xpath = "//span[text()='Finance']")
+    public WebElement financeBtn;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
