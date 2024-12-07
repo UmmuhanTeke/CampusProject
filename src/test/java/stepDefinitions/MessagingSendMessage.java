@@ -51,14 +51,12 @@ public class MessagingSendMessage {
 
             dialogContentElement.wait.until(ExpectedConditions.elementToBeClickable(dialogContentElement.studentControl));
             dialogContentElement.Wait(3);
+
             int randomIndex = random.nextInt(dialogContentElement.checkBoxList.size()) + 1;
             dialogContentElement.myClick(dialogContentElement.checkBoxList.get(randomIndex));
             dialogContentElement.myClick(dialogContentElement.addAndCloseBtn);
         }
-        System.out.println("mesaj:" + dialogContentElement.successMsg.getText());
         dialogContentElement.verifyContainsText(dialogContentElement.successMsg, "successfully");
-
-        System.out.println("Text:" + dialogContentElement.studentTextControl.getText());
         dialogContentElement.verifyContainsText(dialogContentElement.studentTextControl, "Student");
     }
 
@@ -94,14 +92,23 @@ public class MessagingSendMessage {
             dialogContentElement.jsClick(dialogContentElement.sendBtn);
         }
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.sendConfirmMessage));
-        dialogContentElement.Wait(3);
         dialogContentElement.verifyContainsText(dialogContentElement.sendConfirmMessage, "Successfully");
-        System.out.println("msg:" + dialogContentElement.sendConfirmMessage.getText());
     }
 
     @When("The user click outbox message and verifies the outbox message list")
     public void theUserClickOutboxMessageAndVerifiesTheOutboxMessageList(DataTable dtBtn) {
-        topNavElement.myClick(topNavElement.hamburgerMenu);
-        topNavElement.hoverOver(topNavElement.messagingBtn);
+        List<String> btn = dtBtn.asList();
+
+        for (int i = 0; i < btn.size(); i++) {
+            topNavElement.myClick(topNavElement.getWebElement(btn.get(i)));
+            Assert.assertTrue(topNavElement.outboxBtn.isDisplayed());
+            topNavElement.verifyEqualsText(topNavElement.outboxBtn, "Outbox");
+        }
+
+        topNavElement.wait.until(ExpectedConditions.urlToBe(ConfigReader.getProperty("outboxURL")));
+        Assert.assertTrue(GWD.getDriver().getCurrentUrl().equals(ConfigReader.getProperty("outboxURL")));
+
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.outboxMsgControl));
+        dialogContentElement.outboxMsgControl.isDisplayed();
     }
 }
