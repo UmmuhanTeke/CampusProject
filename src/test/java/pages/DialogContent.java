@@ -1,5 +1,6 @@
 package pages;
 
+import org.apache.commons.compress.archivers.zip.X000A_NTFS;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -199,6 +200,18 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "//div[text()='Payment is completed']")
     public WebElement paymentMsgControl;
+
+    @FindBy(xpath = "//ms-standard-button[@icon='eye']/button")
+    public WebElement viewIconBtn;
+
+    @FindBy(xpath ="//div[text()=' Installment ']")
+    public WebElement installmentText;
+
+    @FindBy(xpath = "//mat-panel-title[text()=' Fees ']")
+    public WebElement feesText;
+
+    @FindBy(xpath = "//*[text()='Fee/Balance Detail']")
+    public WebElement feeBalanceDetailText;
 
     public WebElement getWebElement(String strElementName) {
 
