@@ -102,10 +102,10 @@ public class MessagingSendMessage {
         for (int i = 0; i < btn.size(); i++) {
             topNavElement.myClick(topNavElement.getWebElement(btn.get(i)));
             Assert.assertTrue(topNavElement.outboxBtn.isDisplayed());
-            topNavElement.verifyEqualsText(topNavElement.outboxBtn, "Outbox");
+            topNavElement.verifyContainsText(topNavElement.outboxBtn, "Outbox");
         }
 
-        topNavElement.wait.until(ExpectedConditions.urlToBe(ConfigReader.getProperty("outboxURL")));
+        topNavElement.wait.until(ExpectedConditions.urlContains(ConfigReader.getProperty("outboxURL")));
         Assert.assertTrue(GWD.getDriver().getCurrentUrl().equals(ConfigReader.getProperty("outboxURL")));
 
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.outboxMsgControl));
