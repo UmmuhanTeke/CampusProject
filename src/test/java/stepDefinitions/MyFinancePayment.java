@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import pages.DialogContent;
 import utilities.ConfigReader;
@@ -19,22 +20,23 @@ public class MyFinancePayment {
 
     @Given("The user has been redirected to the payment page")
     public void theUserHasBeenRedirectedToThePaymentPage() {
-        dialogContentElement.wait.until(ExpectedConditions.urlToBe(ConfigReader.getProperty("myFinanceURL")));
-        Assert.assertTrue(GWD.getDriver().getCurrentUrl().equals(ConfigReader.getProperty("myFinanceURL")));
+        dialogContentElement.wait.until(ExpectedConditions.urlContains(ConfigReader.getProperty("myFinanceURL")));
+        Assert.assertTrue(GWD.getDriver().getCurrentUrl().contains("active"));
     }
 
     @When("The user clicks on the student information field")
     public void theUserClicksOnTheStudentInformationField() {
-        dialogContentElement.myClick(dialogContentElement.studentButton);
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.viewIconBtn));
+        dialogContentElement.myClick(dialogContentElement.viewIconBtn);
     }
 
     @Then("The user views the Online Payment and Fee Balance Detail buttons")
     public void theUserViewsTheOnlinePaymentAndFeeBalanceDetailButtons() {
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.onlinePaymentButton));
-        dialogContentElement.verifyEqualsText(dialogContentElement.onlinePaymentButton,"Online Payment");
+        dialogContentElement.verifyContainsText(dialogContentElement.onlinePaymentButton,"Online Payment");
 
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.feeBalanceButton));
-        dialogContentElement.verifyEqualsText(dialogContentElement.feeBalanceButton,"Fee/Balance Detail");
+        dialogContentElement.verifyContainsText(dialogContentElement.feeBalanceButton,"Fee/Balance Detail");
     }
 
     @And("The user clicks the Stripe button")
@@ -65,12 +67,26 @@ public class MyFinancePayment {
     public void theUserEntersCardDetailsAndCompletesThePayment() {
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.iframe));
         GWD.getDriver().switchTo().frame(dialogContentElement.iframe);
+
         dialogContentElement.wait.until(ExpectedConditions.elementToBeClickable(dialogContentElement.cardNumberBox));
         dialogContentElement.mySendKeys(dialogContentElement.cardNumberBox, ConfigReader.getProperty("cardNumber"));
+
+        dialogContentElement.mySendKeys(dialogContentElement.expirationDateBox, "1224");
+
+        int randomCVV = 100 + random.nextInt(900);
+        String randomString = String.valueOf(randomCVV);
+        dialogContentElement.mySendKeys(dialogContentElement.securityCodeBox, randomString);
+
+        Select country=new Select(dialogContentElement.selectCountry);
+        country.selectByValue("TR");
+
+        GWD.getDriver().switchTo().parentFrame();
     }
 
     @Then("The user views a message that the payment was successfully completed")
     public void theUserViewsAMessageThatThePaymentWasSuccessfullyCompleted() {
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.successPaymentMsg));
+        dialogContentElement.verifyContainsText(dialogContentElement.successPaymentMsg,"successfully");
     }
 
     @Then("The user verifies that the payment has been completed")

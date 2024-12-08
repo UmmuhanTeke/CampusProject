@@ -1,6 +1,5 @@
 package pages;
 
-import org.apache.commons.compress.archivers.zip.X000A_NTFS;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -65,7 +64,7 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "//span[@class='mdc-evolution-chip__text-label mat-mdc-chip-action-label']")
     public WebElement studentTextControl;
-    
+
     @FindBy(xpath = "//mat-select[@role='combobox']")
     public WebElement selectBtn;
 
@@ -129,7 +128,7 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//*[contains(text(),'move this message')]")
     public WebElement confirmTextSentence;
 
-    @FindBy(xpath = "//div[@fxlayout='column']/div")
+    @FindBy(xpath = "(//span[text()=' Student_6 11A'])[1]")
     public WebElement studentButton;
 
     @FindBy(xpath = "//span[text()='Online Payment']")
