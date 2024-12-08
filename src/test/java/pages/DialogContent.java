@@ -128,10 +128,10 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//div[@fxlayout='column']/div")
     public WebElement studentButton;
 
-    @FindBy(xpath = "//div[contains(@id, 'mat-tab-group-4-label')]")
+    @FindBy(xpath = "//div[contains(@id, 'mat-tab-group-1-label')]")
     public WebElement onlinePaymentButton;
 
-    @FindBy(xpath = "(//div[contains(@id, 'mat-tab-group-4-label')])[2]")
+    @FindBy(xpath = "(//div[contains(@id, 'mat-tab-group-1-label')])[2]")
     public WebElement feeBalanceButton;
 
     @FindBy(xpath = "//input[@value='STRIPE'] ")
@@ -139,6 +139,9 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "(//input[@class='mdc-radio__native-control'])[3]")
     public WebElement paymentCreateOption;
+
+    @FindBy(xpath = "//*[@data-icon='square-xmark']")
+    public WebElement closeIcon;
 
     @FindBy(xpath = "//input[@value='CUSTOM_AMOUNT']")
     public WebElement payOption;
@@ -148,6 +151,51 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "(//span[@class='ng-star-inserted'])[5]")
     public WebElement payButton;
+
+    @FindBy(xpath = "//input[@id='Field-numberInput']")
+    public WebElement cardNumberBox;
+
+    @FindBy(xpath = "//input[@id='Field-expiryInput']")
+    public WebElement expirationDateBox;
+
+    @FindBy(xpath = "//input[@id='Field-cvcInput']")
+    public WebElement securityCodeBox;
+
+    @FindBy(xpath = "//select[@id='Field-countryInput']")
+    public WebElement selectCountry;
+
+    @FindBy(xpath = "(//*[contains(@class, 'mdc-button__ripple')])[9]")
+    public WebElement stripePaymentsButton;
+
+    @FindBy(xpath = "//div[contains(text(),'successfully')]")
+    public WebElement successPaymentMsg;
+
+    @FindBy(xpath = "(//span[@class='ng-star-inserted'])[5]")
+    public WebElement totalBalance;
+
+    @FindBy(xpath = "(//span[@class='ng-star-inserted'])[6]")
+    public WebElement debitAmount;
+
+    @FindBy(xpath = "(//span[@class='ng-star-inserted'])[7]")
+    public WebElement creditAmount;
+
+    @FindBy(xpath = "//*[@data-icon='chevron-left'//*[@data-icon='chevron-left']")
+    public WebElement studentFeeIcon;
+
+    @FindBy(xpath = "(//*[contains(@role,'cell')])[8]")
+    public WebElement totalRevenue;
+
+    @FindBy(xpath = "(//*[contains(@role,'cell')])[9]")
+    public WebElement studentBalance;
+
+    @FindBy(xpath = "//*[@data-icon='envelope']")
+    public WebElement  newMessageIcon;
+
+    @FindBy(xpath = "//*[@data-icon='eye']")
+    public WebElement viewIcon;
+
+    @FindBy(xpath = "//div[text()='Payment is completed']")
+    public WebElement paymentMsgControl;
 
     public WebElement getWebElement(String strElementName) {
 
