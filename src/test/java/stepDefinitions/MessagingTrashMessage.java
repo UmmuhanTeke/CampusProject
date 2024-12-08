@@ -36,7 +36,7 @@ public class MessagingTrashMessage {
         dialogContentElement.myClick(dialogContentElement.deleteIcon);
     }
 
-    @And("confirms the action in the confirmation popup")
+    @And("The user confirms the action in the confirmation pop-up window")
     public void confirmsTheActionInTheConfirmationPopup() {
         dialogContentElement.myClick(dialogContentElement.deleteBtn);
     }
