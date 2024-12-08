@@ -1,11 +1,8 @@
 Feature:Tab Menu Functionality
-
   Background:
-  Scenario: Login with invalid username and password
     Given Navigate to Campus
-    When The user types invalid username and password
-    And The user clicks on the login button
-    Then The user verifies warning message
+    When The user types username and password and click login button
+    Then The user verifies login successfully
 
   Scenario:Clicking the Tab Menu Links
     Given The user displays the TAB menu on the home page
