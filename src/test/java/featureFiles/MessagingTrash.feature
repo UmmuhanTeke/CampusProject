@@ -1,9 +1,9 @@
 Feature:Messaging Trash Functionality
 
   Background:
-    Given Navigate to campus
-    When  Enter username and password and click login button
-    Then  User should login successfully
+    Given Navigate to Campus
+    When The user types username and password and click login button
+    Then The user verifies login successfully
 
   Scenario:Managing deleted messages
 
@@ -14,5 +14,5 @@ Feature:Messaging Trash Functionality
     When  The user clicks the Restore button for a message
     Then  The message should be successfully restored with a Success message
     When  The user clicks the Delete button for a message
-    And   confirms the action in the confirmation popup
+    And   The user confirms the action in the confirmation pop-up window
     Then  The message should be permanently deleted with a Success message

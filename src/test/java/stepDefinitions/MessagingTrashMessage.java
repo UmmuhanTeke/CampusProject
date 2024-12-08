@@ -2,7 +2,6 @@ package stepDefinitions;
 
 import io.cucumber.java.en.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
 import pages.DialogContent;
 
 public class MessagingTrashMessage {
@@ -17,6 +16,7 @@ public class MessagingTrashMessage {
     @Then("The user should display Delete and Restore options for each message")
     public void theUserShouldDisplayDeleteAndRestoreOptionsForEachMessage() {
         dialogContentElement.wait.until(ExpectedConditions.urlContains("trash"));
+        dialogContentElement.wait.until(ExpectedConditions.elementToBeClickable(dialogContentElement.deleteIcon));
         dialogContentElement.deleteIcon.isDisplayed();
         dialogContentElement.restoreIcon.isDisplayed();
     }
@@ -36,13 +36,13 @@ public class MessagingTrashMessage {
         dialogContentElement.myClick(dialogContentElement.deleteIcon);
     }
 
-    @And("confirms the action in the confirmation popup")
+    @And("The user confirms the action in the confirmation pop-up window")
     public void confirmsTheActionInTheConfirmationPopup() {
         dialogContentElement.myClick(dialogContentElement.deleteBtn);
     }
 
     @Then("The message should be permanently deleted with a Success message")
     public void theMessageShouldBePermanentlyDeletedWithAMessage() {
-        Assert.assertTrue(dialogContentElement.msgControl.getText().contains("Message successfully"));
+        dialogContentElement.verifyContainsText(dialogContentElement.msgControl,"Message successfully");
     }
 }
