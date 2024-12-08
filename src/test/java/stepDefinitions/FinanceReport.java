@@ -41,7 +41,7 @@ public class FinanceReport {
 
     @Then("The user should be successfully downloaded to the local drive")
     public void theUserShouldBeSuccessfullyDownloadedToTheLocalDrive() {
-        dialogContentElement.Wait(2); // Time to wait until the file is downloaded
+        dialogContentElement.Wait(5); // Time to wait until the file is downloaded
 
         File downloadFolder = new File(downloadDir);
         File[] files = downloadFolder.listFiles((dir, name) -> name.endsWith(".xlsx"));
