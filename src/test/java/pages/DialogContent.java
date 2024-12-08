@@ -89,7 +89,7 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//span[text()='Select']")
     public WebElement selectButton;
 
-    @FindBy(xpath = "(//button[@aria-haspopup='menu'])[7]")
+    @FindBy(xpath = "//tfoot[@role='rowgroup']//button[@aria-haspopup='menu']")
     public WebElement overFlowMenuBtn;
 
     @FindBy(xpath = "(//div[@class='cdk-overlay-pane']//button)[1]")
