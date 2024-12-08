@@ -23,6 +23,6 @@ Feature:Payment Functionality
     Then  The user views a message that the payment was successfully completed
     Then  The user verifies that the payment has been completed
     When  The user clicks the New Message button in the top right corner of the toolbar
-      | newMessageButton |
+      | newMessageIcon |
 
     Then  The user views the received message in the area
