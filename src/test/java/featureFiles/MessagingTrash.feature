@@ -14,5 +14,5 @@ Feature:Messaging Trash Functionality
     When  The user clicks the Restore button for a message
     Then  The message should be successfully restored with a Success message
     When  The user clicks the Delete button for a message
-    And   confirms the action in the confirmation popup
+    And   The user confirms the action in the confirmation pop-up window
     Then  The message should be permanently deleted with a Success message
