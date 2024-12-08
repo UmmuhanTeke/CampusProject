@@ -204,6 +204,8 @@ public class DialogContent extends ReusableMethods {
 
         switch (strElementName) {
             case "usernameBox": return this.usernameBox;
+            case "stripeButton": return this.stripeButton;
+            case "newMessageIcon": return this.newMessageIcon;
         }
         return null;
     }
