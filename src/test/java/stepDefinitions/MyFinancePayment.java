@@ -23,10 +23,18 @@ public class MyFinancePayment {
         Assert.assertTrue(GWD.getDriver().getCurrentUrl().equals(ConfigReader.getProperty("myFinanceURL")));
     }
 
+    @When("The user clicks on the student information field")
+    public void theUserClicksOnTheStudentInformationField() {
+        dialogContentElement.myClick(dialogContentElement.studentButton);
+    }
+
     @Then("The user views the Online Payment and Fee Balance Detail buttons")
     public void theUserViewsTheOnlinePaymentAndFeeBalanceDetailButtons() {
-        Assert.assertTrue(dialogContentElement.onlinePaymentButton.isDisplayed());
-        Assert.assertTrue(dialogContentElement.feeBalanceButton.isDisplayed());
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.onlinePaymentButton));
+        dialogContentElement.verifyEqualsText(dialogContentElement.onlinePaymentButton,"Online Payment");
+
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.feeBalanceButton));
+        dialogContentElement.verifyEqualsText(dialogContentElement.feeBalanceButton,"Fee/Balance Detail");
     }
 
     @And("The user clicks the Stripe button")
@@ -40,14 +48,25 @@ public class MyFinancePayment {
 
     @Then("The user views the payment options")
     public void theUserViewsThePaymentOptions() {
+        Assert.assertTrue(dialogContentElement.paymentOptions.isDisplayed());
     }
 
     @When("The user clicks the Pay option and views the card information field")
     public void theUserClicksThePayOptionAndViewsTheCardInformationField() {
+        dialogContentElement.myClick(dialogContentElement.paymentCreateOption);
+        dialogContentElement.myClick(dialogContentElement.closeIcon);
+        dialogContentElement.myClick(dialogContentElement.payOption);
+        dialogContentElement.mySendKeys(dialogContentElement.amountBox, "1");
+        dialogContentElement.myClick(dialogContentElement.unactivePayButton);
+        dialogContentElement.myClick(dialogContentElement.payButton);
     }
 
     @And("The user enters card details and completes the payment")
     public void theUserEntersCardDetailsAndCompletesThePayment() {
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.iframe));
+        GWD.getDriver().switchTo().frame(dialogContentElement.iframe);
+        dialogContentElement.wait.until(ExpectedConditions.elementToBeClickable(dialogContentElement.cardNumberBox));
+        dialogContentElement.mySendKeys(dialogContentElement.cardNumberBox, ConfigReader.getProperty("cardNumber"));
     }
 
     @Then("The user views a message that the payment was successfully completed")
