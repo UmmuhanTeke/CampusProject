@@ -64,7 +64,7 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "//span[@class='mdc-evolution-chip__text-label mat-mdc-chip-action-label']")
     public WebElement studentTextControl;
-    
+
     @FindBy(xpath = "//mat-select[@role='combobox']")
     public WebElement selectBtn;
 
@@ -128,31 +128,31 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//*[contains(text(),'move this message')]")
     public WebElement confirmTextSentence;
 
-    @FindBy(xpath = "//div[@fxlayout='column']/div")
+    @FindBy(xpath = "(//span[text()=' Student_6 11A'])[1]")
     public WebElement studentButton;
 
-    @FindBy(xpath = "//div[contains(@id, 'mat-tab-group-1-label')]")
+    @FindBy(xpath = "//span[text()='Online Payment']")
     public WebElement onlinePaymentButton;
 
-    @FindBy(xpath = "(//div[contains(@id, 'mat-tab-group-1-label')])[2]")
+    @FindBy(xpath = "//span[text()='Fee/Balance Detail']")
     public WebElement feeBalanceButton;
 
-    @FindBy(xpath = "//input[@value='STRIPE'] ")
+    @FindBy(xpath = "//*[text()='Stripe '] ")
     public WebElement stripeButton;
 
-    @FindBy(xpath = "(//input[@class='mdc-radio__native-control'])[3]")
+    @FindBy(xpath = "(//label[@class='mdc-label'])[3]")
     public WebElement paymentCreateOption;
 
-    @FindBy(xpath = "//*[@data-icon='square-xmark']")
+    @FindBy(xpath = "(//*[@fxlayoutalign='center center'])[2]")
     public WebElement closeIcon;
 
-    @FindBy(xpath = "//input[@value='CUSTOM_AMOUNT']")
+    @FindBy(xpath = "(//label[@class='mdc-label'])[5]")
     public WebElement payOption;
 
     @FindBy(xpath = "//input[contains(@id, 'ms-currency-field')]")
     public WebElement amountBox;
 
-    @FindBy(xpath = "(//span[@class='ng-star-inserted'])[5]")
+    @FindBy(xpath = "//*[@class='svg-inline--fa fa-wallet fa-fw']")
     public WebElement payButton;
 
     @FindBy(xpath = "//input[@id='Field-numberInput']")
@@ -199,6 +199,27 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "//div[text()='Payment is completed']")
     public WebElement paymentMsgControl;
+
+    @FindBy(xpath = "//ms-standard-button[@icon='eye']/button")
+    public WebElement viewIconBtn;
+
+    @FindBy(xpath ="//div[text()=' Installment ']")
+    public WebElement installmentText;
+
+    @FindBy(xpath = "//mat-panel-title[text()=' Fees ']")
+    public WebElement feesText;
+
+    @FindBy(xpath = "//*[text()='Fee/Balance Detail']")
+    public WebElement feeBalanceDetailText;
+
+    @FindBy(xpath = "(//*[@role='radiogroup'])[2]")
+    public WebElement paymentOptions;
+
+    @FindBy(xpath = "//*[@icon='wallet']")
+    public WebElement unactivePayButton;
+
+    @FindBy(css = "[title='Secure payment input frame']")
+    public WebElement iframe;
 
     public WebElement getWebElement(String strElementName) {
 
