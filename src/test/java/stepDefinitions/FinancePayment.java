@@ -41,45 +41,53 @@ public class FinancePayment {
 
     @When("The user enters the amount and clicks the pay button")
     public void the_user_enters_the_amount_and_clicks_the_pay_button() {
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.stripeBtn));
-        topNavElement.myClick(topNavElement.stripeBtn);
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.stripeBtn));
+        topNavElement.myClick(dialogContentElement.stripeBtn);
 
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.payCtrl));
-        topNavElement.myClick(topNavElement.payCtrl);
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.payCtrl));
+        topNavElement.jsClick(dialogContentElement.payCtrl);
+        topNavElement.myClick(dialogContentElement.payCtrl);
 
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.payButton));
-        topNavElement.myClick(topNavElement.payButton);
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.payButton));
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.payButton));
+        topNavElement.myClick(dialogContentElement.payButton);
 
-        topNavElement.myClick(topNavElement.amountBtn);
-        topNavElement.mySendKeys(topNavElement.amountBtn, ConfigReader.getProperty("amount"));
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.amountBtn));
+        topNavElement.myClick(dialogContentElement.amountBtn);
+        topNavElement.mySendKeys(dialogContentElement.amountBtn, ConfigReader.getProperty("amount"));
 
-        dialogContentElement.wait.until(ExpectedConditions.elementToBeClickable(topNavElement.payBtn));
-        topNavElement.myClick(topNavElement.payBtn);
+        dialogContentElement.wait.until(ExpectedConditions.elementToBeClickable(dialogContentElement.payBtn));
+        topNavElement.myClick(dialogContentElement.payBtn);
     }
 
     @When("The user enters their card details")
     public void the_user_enters_their_card_details(DataTable dataTable) {
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.cardNumber));
-        topNavElement.myClick(topNavElement.cardNumber);
-        topNavElement.mySendKeys(topNavElement.cardNumber, ConfigReader.getProperty("cardNumber"));
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.iframe));
+        GWD.getDriver().switchTo().frame(dialogContentElement.iframe);
+
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.cardNumber));
+        topNavElement.myClick(dialogContentElement.cardNumber);
+        topNavElement.mySendKeys(dialogContentElement.cardNumber, ConfigReader.getProperty("cardNumber"));
 
         int randomCVV = topNavElement.randomGenerator(900) + 100;
-        topNavElement.mySendKeys(topNavElement.expirationDate, Integer.toString(randomCVV));
+        topNavElement.mySendKeys(dialogContentElement.expirationDate, Integer.toString(randomCVV));
         int randomMonth = topNavElement.randomGenerator(12) + 1;
         int randomYear = topNavElement.randomGenerator(10) + 25;
         String expireDate = Integer.toString(randomMonth) + randomYear;
-        topNavElement.mySendKeys(topNavElement.expirationDate, expireDate);
+        topNavElement.mySendKeys(dialogContentElement.expirationDate, expireDate);
     }
 
     @When("The user confirms the payment")
     public void the_user_confirms_the_payment() {
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.payButton));
-        topNavElement.myClick(topNavElement.payButton);
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.payButton));
+        topNavElement.myClick(dialogContentElement.payButton);
     }
 
     @Then("The user displays a confirmation message {string}")
     public void the_user_displays_a_confirmation_message() {
+        topNavElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.newMessageIcon));
+        topNavElement.jsClick(topNavElement.newMessageIcon);
         dialogContentElement.verifyContainsText(dialogContentElement.msgControl, "successfully");
+        Assert.assertTrue(dialogContentElement.paymentMsgControl.isDisplayed());
+        dialogContentElement.verifyContainsText(dialogContentElement.paymentMsgControl, "completed");
     }
 }

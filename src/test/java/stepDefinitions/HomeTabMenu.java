@@ -121,10 +121,10 @@ public class HomeTabMenu {
         topNavElement.hoverOver(topNavElement.myFiles);
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.changePassword));
         topNavElement.hoverOver(topNavElement.changePassword);
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.settingsBtn));
-        topNavElement.hoverOver(topNavElement.settingsBtn);
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.signOut));
-        topNavElement.hoverOver(topNavElement.signOut);
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.settingsBtn));
+        topNavElement.hoverOver(dialogContentElement.settingsBtn);
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.signOut));
+        topNavElement.hoverOver(dialogContentElement.signOut);
 
     }
 
@@ -136,7 +136,7 @@ public class HomeTabMenu {
     @When("The user clicks on Sign Out and logs out of the site")
     public void the_user_clicks_on_sign_out_and_logs_out_of_the_site() {
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.myCertificates));
-        topNavElement.myClick(topNavElement.signOut);
+        topNavElement.myClick(dialogContentElement.signOut);
 
     }
 

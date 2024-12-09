@@ -110,12 +110,6 @@ public class TopNav extends ReusableMethods {
     @FindBy(xpath = "//button[@aria-label='Close dialog']")
     public WebElement announcementCloseBtn;
 
-    @FindBy(xpath = "//button[@aria-label='Close dialog']")
-    public WebElement messagesCloseBtn;
-
-    @FindBy(xpath = "//span[text()=' S. 11A']")
-    public WebElement studentProfileMenu;
-
     @FindBy(xpath = "//span[text()='My Certificates']")
     public WebElement myCertificates;
 
@@ -124,12 +118,6 @@ public class TopNav extends ReusableMethods {
 
     @FindBy(xpath = "//span[text()='Change Password']")
     public WebElement changePassword;
-
-    @FindBy(xpath = "//span[text()='Settings']")
-    public WebElement settingsBtn;
-
-    @FindBy(xpath = "//span[text()='Sign Out']")
-    public WebElement signOut;
 
     public WebElement getWebElement(String strElementName) {
 

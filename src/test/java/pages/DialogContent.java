@@ -218,6 +218,12 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "(//div[@class='p-Input'])[2]")
     public WebElement expirationDate;
 
+    @FindBy(xpath = "//span[text()='Settings']")
+    public WebElement settingsBtn;
+
+    @FindBy(xpath = "//span[text()='Sign Out']")
+    public WebElement signOut;
+
     @FindBy(css = "[title='Secure payment input frame']")
     public WebElement iframe;
 
