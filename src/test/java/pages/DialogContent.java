@@ -200,6 +200,24 @@ public class DialogContent extends ReusableMethods {
     @FindBy(css = "[matsortactive='date'] div")
     public WebElement scrollElement;
 
+    @FindBy(xpath = "//div[@class='mdc-radio']")
+    public WebElement stripeBtn;
+
+    @FindBy(xpath = "(//div[@class='mdc-radio__background'])[2]")
+    public WebElement payCtrl;
+
+    @FindBy(xpath = "//input[@type='text']")
+    public WebElement amountBtn;
+
+    @FindBy(xpath = "(//span[contains(text(), 'Pay')])[2]")
+    public WebElement payBtn;
+
+    @FindBy(xpath = "//div[@class='p-CardNumberInput']")
+    public WebElement cardNumber;
+
+    @FindBy(xpath = "(//div[@class='p-Input'])[2]")
+    public WebElement expirationDate;
+
     @FindBy(css = "[title='Secure payment input frame']")
     public WebElement iframe;
 
