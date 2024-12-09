@@ -47,18 +47,6 @@ public class TopNav extends ReusableMethods {
     @FindBy(xpath = "//user-message-bell/button")
     public WebElement  newMessageIcon;
 
-    @FindBy(xpath = "(//span[@class='mat-mdc-menu-item-text'])[2]")
-    public WebElement financeButton;
-
-    @FindBy(xpath = "//span[text()='My Finance']")
-    public WebElement myFinanceButton;
-
-    @FindBy(xpath = "//span[text()='Finance']")
-    public WebElement financeBtn;
-
-    @FindBy(xpath = "//span[text()='Outbox']")
-    public WebElement outboxBtn;
-
     @FindBy(xpath = "(//span[@class='mdc-button__label'])[6]")
     public WebElement hamburgerMenuBtn;
 
@@ -67,27 +55,6 @@ public class TopNav extends ReusableMethods {
 
     @FindBy(xpath = "(//span[text()=' Student_6 11A'])[1]")
     public WebElement studentBtn;
-
-    @FindBy(xpath = "//div[@class='mdc-radio']")
-    public WebElement stripeBtn;
-
-    @FindBy(xpath = "(//div[@class='mdc-radio__background'])[2]")
-    public WebElement payCtrl;
-
-    @FindBy(xpath = "((//div[@class='mdc-radio__background'])[4]")
-    public WebElement payButton;
-
-    @FindBy(xpath = "//input[@type='text']")
-    public WebElement amountBtn;
-
-    @FindBy(xpath = "(//span[contains(text(), 'Pay')])[2]")
-    public WebElement payBtn;
-
-    @FindBy(xpath = "//div[@class='p-CardNumberInput']")
-    public WebElement cardNumber;
-
-    @FindBy(xpath = "(//div[@class='p-Input'])[2]")
-    public WebElement expirationDate;
 
     @FindBy(xpath = "//div[@class='StripeElement']")
     public WebElement stripeButton;
