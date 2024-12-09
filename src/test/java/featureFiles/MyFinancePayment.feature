@@ -13,6 +13,7 @@ Feature:Payment Functionality
 
   Scenario:Payment Feature on My Finance Page
     Given The user has been redirected to the payment page
+    When  The user clicks on the student information field
     Then  The user views the Online Payment and Fee Balance Detail buttons
     And   The user clicks the Stripe button
       | stripeButton |

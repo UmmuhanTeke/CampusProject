@@ -11,7 +11,7 @@ import java.util.List;
 public class DialogContent extends ReusableMethods {
 
     public DialogContent() {
-        PageFactory.initElements(GWD.getDriver() ,this);
+        PageFactory.initElements(GWD.getDriver(), this);
     }
 
     @FindBy(css = "input[formcontrolname='username']")
@@ -39,7 +39,7 @@ public class DialogContent extends ReusableMethods {
     public WebElement usernameBox;
 
     @FindBy(xpath = "//div[@class='mdc-checkbox']")
-    public List<WebElement>checkBoxList;
+    public List<WebElement> checkBoxList;
 
     @FindBy(xpath = "//span[text()='Add & Close']")
     public WebElement addAndCloseBtn;
@@ -146,7 +146,7 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "(//*[@fxlayoutalign='center center'])[2]")
     public WebElement closeIcon;
 
-    @FindBy(xpath = "(//label[@class='mdc-label'])[5]")
+    @FindBy(xpath = "(//label[@class='mdc-label'])[4]")
     public WebElement payOption;
 
     @FindBy(xpath = "//input[contains(@id, 'ms-currency-field')]")
@@ -167,35 +167,14 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//select[@id='Field-countryInput']")
     public WebElement selectCountry;
 
-    @FindBy(xpath = "(//*[contains(@class, 'mdc-button__ripple')])[9]")
+    @FindBy(xpath = "//span[@class='mdc-button__label']/img")
     public WebElement stripePaymentsButton;
 
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     public WebElement successPaymentMsg;
 
-    @FindBy(xpath = "(//span[@class='ng-star-inserted'])[5]")
+    @FindBy(xpath = "//*[contains(text(),'Total :')]")
     public WebElement totalBalance;
-
-    @FindBy(xpath = "(//span[@class='ng-star-inserted'])[6]")
-    public WebElement debitAmount;
-
-    @FindBy(xpath = "(//span[@class='ng-star-inserted'])[7]")
-    public WebElement creditAmount;
-
-    @FindBy(xpath = "//*[@data-icon='chevron-left'//*[@data-icon='chevron-left']")
-    public WebElement studentFeeIcon;
-
-    @FindBy(xpath = "(//*[contains(@role,'cell')])[8]")
-    public WebElement totalRevenue;
-
-    @FindBy(xpath = "(//*[contains(@role,'cell')])[9]")
-    public WebElement studentBalance;
-
-    @FindBy(xpath = "//*[@data-icon='envelope']")
-    public WebElement  newMessageIcon;
-
-    @FindBy(xpath = "//*[@data-icon='eye']")
-    public WebElement viewIcon;
 
     @FindBy(xpath = "//div[text()='Payment is completed']")
     public WebElement paymentMsgControl;
@@ -203,7 +182,7 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//ms-standard-button[@icon='eye']/button")
     public WebElement viewIconBtn;
 
-    @FindBy(xpath ="//div[text()=' Installment ']")
+    @FindBy(xpath = "//div[text()=' Installment ']")
     public WebElement installmentText;
 
     @FindBy(xpath = "//mat-panel-title[text()=' Fees ']")
@@ -218,6 +197,9 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//*[@icon='wallet']")
     public WebElement unactivePayButton;
 
+    @FindBy(css = "[matsortactive='date'] div")
+    public WebElement scrollElement;
+
     @FindBy(css = "[title='Secure payment input frame']")
     public WebElement iframe;
 
@@ -226,7 +208,6 @@ public class DialogContent extends ReusableMethods {
         switch (strElementName) {
             case "usernameBox": return this.usernameBox;
             case "stripeButton": return this.stripeButton;
-            case "newMessageIcon": return this.newMessageIcon;
         }
         return null;
     }
