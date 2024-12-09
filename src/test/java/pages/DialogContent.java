@@ -176,27 +176,6 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//*[contains(text(),'Total :')]")
     public WebElement totalBalance;
 
-    @FindBy(xpath = "(//span[@class='ng-star-inserted'])[6]")
-    public WebElement debitAmount;
-
-    @FindBy(xpath = "(//span[@class='ng-star-inserted'])[7]")
-    public WebElement creditAmount;
-
-    @FindBy(xpath = "//*[@data-icon='chevron-left'//*[@data-icon='chevron-left']")
-    public WebElement studentFeeIcon;
-
-    @FindBy(xpath = "(//*[contains(@role,'cell')])[8]")
-    public WebElement totalRevenue;
-
-    @FindBy(xpath = "(//*[contains(@role,'cell')])[9]")
-    public WebElement studentBalance;
-
-    @FindBy(xpath = "//*[@data-icon='envelope']")
-    public WebElement newMessageIcon;
-
-    @FindBy(xpath = "//*[@data-icon='eye']")
-    public WebElement viewIcon;
-
     @FindBy(xpath = "//div[text()='Payment is completed']")
     public WebElement paymentMsgControl;
 
