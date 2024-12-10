@@ -38,17 +38,12 @@ public class ThemeFeature {
         int randomIndex= random.nextInt(dialogContentElement.themeOptions.size());
         dialogContentElement.myClick(dialogContentElement.themeOptions.get(randomIndex));
 
-        JavascriptExecutor js=(JavascriptExecutor) GWD.getDriver();
-        String backgroundColor = (String) js.executeScript(
-                "return getComputedStyle(arguments[0]).getPropertyValue('--mat-toolbar-container-background-color');",
-                dialogContentElement.topBar);
-
         List<String> themeCode=new ArrayList<>();
         Collections.addAll(themeCode,"#6a1b9a","#673ab7","#361e54","#3f51b5");
 
         for (String theme : themeCode){
-            if (backgroundColor.trim().equals(theme)){
-                Assert.assertEquals(theme,backgroundColor);
+            if (dialogContentElement.jsColor("--mat-toolbar-container-background-color",dialogContentElement.topBar).trim().equals(theme)){
+                Assert.assertEquals(theme,dialogContentElement.jsColor("--mat-toolbar-container-background-color",dialogContentElement.topBar));
                 break;
             }
         }
