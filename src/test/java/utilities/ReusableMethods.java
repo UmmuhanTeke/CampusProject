@@ -61,6 +61,14 @@ public class ReusableMethods {
         js.executeScript("arguments[0].click();", element);
     }
 
+    public String jsColor(String value,WebElement element){
+        JavascriptExecutor js=(JavascriptExecutor) GWD.getDriver();
+        String backgroundColor = (String) js.executeScript(
+                "return getComputedStyle(arguments[0]).getPropertyValue('"+value+"');",
+                element);
+        return backgroundColor;
+    }
+
     public int randomGenerator(int range) {
         return (int) (Math.random() * range);
     }
