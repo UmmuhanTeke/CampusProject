@@ -1,16 +1,11 @@
 package utilities;
 
-import com.github.javafaker.Faker;
-
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Locale;
 import java.util.Properties;
 
 public class ConfigReader {
     private static Properties properties = new Properties();
-    static Faker faker = new Faker(new Locale("en-US"));
-
     static {
         try {
             FileInputStream file = new FileInputStream("configuration.properties");
