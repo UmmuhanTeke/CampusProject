@@ -33,12 +33,15 @@ public class ThemeFeature {
         dialogContentElement.myClick(dialogContentElement.themeBtn);
         dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.themeOptions));
 
-        int randomIndex= random.nextInt(dialogContentElement.themeOptions.size())+1;
+        dialogContentElement.jsClick(dialogContentElement.themeControlText);
+        int randomIndex= random.nextInt(dialogContentElement.themeOptions.size());
+        String text=dialogContentElement.themeOptions.get(randomIndex).getText();
         dialogContentElement.myClick(dialogContentElement.themeOptions.get(randomIndex));
+
+        dialogContentElement.verifyContainsText(dialogContentElement.themeControlText, text);
 
         List<String> themeCode=new ArrayList<>();
         Collections.addAll(themeCode,"#6a1b9a","#673ab7","#361e54","#3f51b5");
-
         for (String theme : themeCode){
             if (dialogContentElement.jsColor("--mat-toolbar-container-background-color",dialogContentElement.topBar).trim().equals(theme)){
                 Assert.assertEquals(theme,dialogContentElement.jsColor("--mat-toolbar-container-background-color",dialogContentElement.topBar));
