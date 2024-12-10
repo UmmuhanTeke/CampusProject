@@ -47,7 +47,12 @@ public class ThemeFeature {
         List<String> themeCode=new ArrayList<>();
         Collections.addAll(themeCode,"#6a1b9a","#673ab7","#361e54","#3f51b5");
 
-        Assert.assertTrue(backgroundColor.trim().contains(themeCode.get(randomIndex)));
+        for (String theme : themeCode){
+            if (backgroundColor.trim().equals(theme)){
+                Assert.assertEquals(theme,backgroundColor);
+                break;
+            }
+        }
     }
 
     @Then("The user clicks on the save button and displays Success message")
