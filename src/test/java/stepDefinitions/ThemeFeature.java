@@ -16,14 +16,11 @@ public class ThemeFeature {
     TopNav topNavElement=new TopNav();
     Random random=new Random();
 
-    @Given("The user clicks on on the Profile")
+    @Given("The user clicks on the Profile and selects the Settings link in the Profile menu")
     public void theUserClicksOnOnTheProfile() {
         topNavElement.wait.until(ExpectedConditions.urlContains("user-courses"));
         topNavElement.myClick(topNavElement.profileBtn);
-    }
 
-    @And("The user clicks on the Settings link")
-    public void theUserClicksOnTheSettingsLink() {
         topNavElement.wait.until(ExpectedConditions.visibilityOfAllElements(topNavElement.profileSettings));
         topNavElement.myClick(topNavElement.profileSettings);
     }
