@@ -263,6 +263,9 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//div[contains(text(),'successfully updated')]")
     public WebElement updateMsg;
 
+    @FindBy(css = "[formcontrolname='theme']")
+    public WebElement themeControlText;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
