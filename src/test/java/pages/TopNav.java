@@ -74,10 +74,10 @@ public class TopNav extends ReusableMethods {
     @FindBy(xpath = "(//span[text()='Calendar'])[2]")
     public WebElement calendarMenu;
 
-    @FindBy(xpath = "(//span[text()='Attendance'])[1]")
+    @FindBy(xpath = "//span[text()='Attendance']")
     public WebElement attendanceMenu;
 
-    @FindBy(xpath = "(//span[text()='Assignments'])[1]")
+    @FindBy(xpath = "//span[text()='Assignments']")
     public WebElement assignmentsMenu;
 
     @FindBy(xpath = "(//span[text()='Grading'])[1]")
