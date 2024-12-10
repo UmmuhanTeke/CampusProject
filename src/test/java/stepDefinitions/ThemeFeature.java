@@ -35,7 +35,7 @@ public class ThemeFeature {
         dialogContentElement.myClick(dialogContentElement.themeBtn);
         dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.themeOptions));
 
-        int randomIndex= random.nextInt(dialogContentElement.themeOptions.size());
+        int randomIndex= random.nextInt(dialogContentElement.themeOptions.size())+1;
         dialogContentElement.myClick(dialogContentElement.themeOptions.get(randomIndex));
 
         List<String> themeCode=new ArrayList<>();
