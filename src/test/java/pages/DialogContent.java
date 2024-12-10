@@ -239,6 +239,15 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "(//div[@class='mdc-checkbox'])[2]")
     public WebElement checkBox;
 
+    @FindBy(css = "div[class='hot-toast-bar-base']")
+    public WebElement toolTipBar;
+
+    @FindBy(xpath = "//ms-button[@caption='GENERAL.BUTTON.SELECT']/button")
+    public WebElement myDriveSelect;
+
+    @FindBy(xpath = "//div[contains(text(),'successfully sent')]")
+    public WebElement excuseConfirmMsg;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
