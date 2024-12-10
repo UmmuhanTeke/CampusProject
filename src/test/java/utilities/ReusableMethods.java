@@ -65,15 +65,6 @@ public class ReusableMethods {
         return (int) (Math.random() * range);
     }
 
-    public boolean listContainsString(List<WebElement> list, String search) {
-        boolean isFound = false;
-        for (WebElement e : list) {
-            if (e.getText().equalsIgnoreCase(search))
-                isFound = true;
-        }
-        return isFound;
-    }
-
     public void Wait(int sn) {
         try {
             Thread.sleep(sn * 1000L);
