@@ -227,6 +227,18 @@ public class DialogContent extends ReusableMethods {
     @FindBy(css = "[title='Secure payment input frame']")
     public WebElement iframe;
 
+    @FindBy(xpath = "//span[text()=' ATTENDANCE EXCUSES ']")
+    public WebElement attendanceExcusesBtn;
+
+    @FindBy(xpath = "//ms-add-button/button")
+    public WebElement addButton;
+
+    @FindBy(xpath = "//ms-textarea-field/textarea")
+    public WebElement inputMessage;
+
+    @FindBy(xpath = "(//div[@class='mdc-checkbox'])[2]")
+    public WebElement checkBox;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
