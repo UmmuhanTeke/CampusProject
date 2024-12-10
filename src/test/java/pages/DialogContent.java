@@ -254,7 +254,7 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//mat-option[@role='option']")
     public List<WebElement> themeOptions;
 
-    @FindBy(css = "mat-toolbar-row[fxlayoutalign='space-between center']")
+    @FindBy(css = ".mat-toolbar.mat-primary")
     public WebElement topBar;
 
     @FindBy(xpath = "//ms-save-button/button")
