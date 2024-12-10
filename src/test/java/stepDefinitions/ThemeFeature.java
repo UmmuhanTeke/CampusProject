@@ -1,10 +1,17 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.*;
+import org.openqa.selenium.JavascriptException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 import pages.DialogContent;
 import pages.TopNav;
+import utilities.GWD;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 public class ThemeFeature {
@@ -31,6 +38,16 @@ public class ThemeFeature {
 
         int randomIndex= random.nextInt(dialogContentElement.themeOptions.size());
         dialogContentElement.myClick(dialogContentElement.themeOptions.get(randomIndex));
+
+        JavascriptExecutor js=(JavascriptExecutor) GWD.getDriver();
+        String backgroundColor = (String) js.executeScript(
+                "return getComputedStyle(arguments[0]).getPropertyValue('--mat-toolbar-container-background-color');",
+                dialogContentElement.topBar);
+
+        List<String> themeCode=new ArrayList<>();
+        Collections.addAll(themeCode,"#6a1b9a","#673ab7","#361e54","#3f51b5");
+
+        Assert.assertTrue(backgroundColor.trim().contains(themeCode.get(randomIndex)));
     }
 
     @Then("The user clicks on the save button and displays Success message")
