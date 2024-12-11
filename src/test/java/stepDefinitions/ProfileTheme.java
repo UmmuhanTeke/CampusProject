@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class ThemeFeature {
+public class ProfileTheme {
     DialogContent dialogContentElement=new DialogContent();
     TopNav topNavElement=new TopNav();
     Random random=new Random();
