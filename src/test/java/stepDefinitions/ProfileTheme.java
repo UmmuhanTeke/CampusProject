@@ -30,7 +30,6 @@ public class ProfileTheme {
         dialogContentElement.myClick(dialogContentElement.themeBtn);
         dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.themeOptions));
 
-        dialogContentElement.jsClick(dialogContentElement.themeControlText);
         int randomIndex= random.nextInt(dialogContentElement.themeOptions.size());
         String text=dialogContentElement.themeOptions.get(randomIndex).getText();
         dialogContentElement.myClick(dialogContentElement.themeOptions.get(randomIndex));
@@ -49,7 +48,7 @@ public class ProfileTheme {
 
     @Then("The user clicks on the save button and displays Success message")
     public void theUserClicksOnTheSaveButtonAndDisplaysSuccessMessage() {
-        dialogContentElement.myClick(dialogContentElement.saveBtn);
+        dialogContentElement.jsClick(dialogContentElement.saveBtn);
 
         dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.updateMsg));
         dialogContentElement.verifyContainsText(dialogContentElement.updateMsg,"successfully updated");
