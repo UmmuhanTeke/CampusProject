@@ -2,8 +2,8 @@ Feature: Upload Profile Photo Functionality
 
   Background:
     Given Navigate to Campus
-    When The user types username and password and click login button
-    Then The user verifies login successfully
+    When  The user types username and password and click login button
+    Then  The user verifies login successfully
 
   Scenario: Upload Profile Photo
     Given The user clicks on the Profile and selects the Settings link in the Profile menu
