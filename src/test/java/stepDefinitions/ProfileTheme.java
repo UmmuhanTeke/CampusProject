@@ -11,19 +11,16 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class ThemeFeature {
+public class ProfileTheme {
     DialogContent dialogContentElement=new DialogContent();
     TopNav topNavElement=new TopNav();
     Random random=new Random();
 
-    @Given("The user clicks on on the Profile")
+    @Given("The user clicks on the Profile and selects the Settings link in the Profile menu")
     public void theUserClicksOnOnTheProfile() {
         topNavElement.wait.until(ExpectedConditions.urlContains("user-courses"));
         topNavElement.myClick(topNavElement.profileBtn);
-    }
 
-    @And("The user clicks on the Settings link")
-    public void theUserClicksOnTheSettingsLink() {
         topNavElement.wait.until(ExpectedConditions.visibilityOfAllElements(topNavElement.profileSettings));
         topNavElement.myClick(topNavElement.profileSettings);
     }
@@ -33,12 +30,14 @@ public class ThemeFeature {
         dialogContentElement.myClick(dialogContentElement.themeBtn);
         dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.themeOptions));
 
-        int randomIndex= random.nextInt(dialogContentElement.themeOptions.size())+1;
+        int randomIndex= random.nextInt(dialogContentElement.themeOptions.size());
+        String text=dialogContentElement.themeOptions.get(randomIndex).getText();
         dialogContentElement.myClick(dialogContentElement.themeOptions.get(randomIndex));
+
+        dialogContentElement.verifyContainsText(dialogContentElement.themeControlText, text);
 
         List<String> themeCode=new ArrayList<>();
         Collections.addAll(themeCode,"#6a1b9a","#673ab7","#361e54","#3f51b5");
-
         for (String theme : themeCode){
             if (dialogContentElement.jsColor("--mat-toolbar-container-background-color",dialogContentElement.topBar).trim().equals(theme)){
                 Assert.assertEquals(theme,dialogContentElement.jsColor("--mat-toolbar-container-background-color",dialogContentElement.topBar));
@@ -49,7 +48,7 @@ public class ThemeFeature {
 
     @Then("The user clicks on the save button and displays Success message")
     public void theUserClicksOnTheSaveButtonAndDisplaysSuccessMessage() {
-        dialogContentElement.myClick(dialogContentElement.saveBtn);
+        dialogContentElement.jsClick(dialogContentElement.saveBtn);
 
         dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.updateMsg));
         dialogContentElement.verifyContainsText(dialogContentElement.updateMsg,"successfully updated");
