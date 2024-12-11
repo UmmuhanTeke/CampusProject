@@ -1,14 +1,37 @@
 package stepDefinitions;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
+import pages.DialogContent;
+import pages.TopNav;
+
+import java.util.List;
+import java.util.Random;
 
 public class CalendarFeature {
+    DialogContent dialogContentElement = new DialogContent();
+    TopNav topNavElement = new TopNav();
+    Random random = new Random();
+
     @When("The user clicks on the Calendar button on the top navigation bar")
-    public void theUserClicksOnTheCalendarButtonOnTheTopNavigationBar() {
+    public void theUserClicksOnTheCalendarButtonOnTheTopNavigationBar(DataTable calendarBtn) {
+        List<String> calendarButton = calendarBtn.asList();
+
+        for (int i = 0; i < calendarButton.size(); i++) {
+            topNavElement.myClick(topNavElement.getWebElement(calendarButton.get(i)));
+        }
     }
 
     @Then("The user views today's date and the Weekly Course Plan by default")
     public void theUserViewsTodaySDateAndTheWeeklyCoursePlanByDefault() {
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.dateVerify));
+        Assert.assertTrue(dialogContentElement.dateVerify.isDisplayed());
+        System.out.println(dialogContentElement.dateVerify.getText());
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.coursePlanTableVerify));
+        Assert.assertTrue(dialogContentElement.courseGradeTableVerify.isDisplayed());
+        System.out.println(dialogContentElement.coursePlanTableVerify.getText());
     }
 
     @Then("The user views the icons \\(P,S,E,C) and descriptions of the scheduled lessons")
