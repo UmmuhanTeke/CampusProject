@@ -311,6 +311,12 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//span[text()='New Submission']")
     public WebElement newSubmissionBtn;
 
+    @FindBy(css = "[class='ng-star-inserted'] strong")
+    public WebElement dateVerify;
+
+    @FindBy(xpath = "//table[@class='ng-star-inserted']")
+    public WebElement coursePlanTableVerify;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
