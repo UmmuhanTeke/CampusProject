@@ -12,7 +12,7 @@ import utilities.GWD;
 import java.util.List;
 import java.util.Random;
 
-public class MyFinancePayment {
+public class FinanceFee {
     DialogContent dialogContentElement = new DialogContent();
     TopNav topNavElement = new TopNav();
     Random random = new Random();
