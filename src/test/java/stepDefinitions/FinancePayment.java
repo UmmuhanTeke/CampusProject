@@ -26,7 +26,7 @@ public class FinancePayment {
         topNavElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.hamburgerMenu));
         topNavElement.myClick(topNavElement.hamburgerMenuBtn);
 
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.financeButton));
+        topNavElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.financeButton));
         topNavElement.hoverOver(topNavElement.financeButton);
 
         topNavElement.wait.until((ExpectedConditions.visibilityOf(topNavElement.myFinance)));
@@ -42,21 +42,22 @@ public class FinancePayment {
     @When("The user enters the amount and clicks the pay button")
     public void the_user_enters_the_amount_and_clicks_the_pay_button() {
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.stripeBtn));
-        topNavElement.myClick(dialogContentElement.stripeBtn);
+        dialogContentElement.myClick(dialogContentElement.stripeBtn);
 
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.payCtrl));
-        topNavElement.jsClick(dialogContentElement.payCtrl);
+        dialogContentElement.wait.until(ExpectedConditions.elementToBeClickable(dialogContentElement.payCtrl));
+        dialogContentElement.jsClick(dialogContentElement.payCtrl);
+        dialogContentElement.wait.until(ExpectedConditions.elementToBeClickable(dialogContentElement.payCtrl));
         topNavElement.myClick(dialogContentElement.payCtrl);
 
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.payButton));
         topNavElement.myClick(dialogContentElement.payButton);
 
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.amountBtn));
-        topNavElement.myClick(dialogContentElement.amountBtn);
-        topNavElement.mySendKeys(dialogContentElement.amountBtn, ConfigReader.getProperty("amount"));
+        dialogContentElement.myClick(dialogContentElement.amountBtn);
+        dialogContentElement.mySendKeys(dialogContentElement.amountBtn, ConfigReader.getProperty("amount"));
 
         dialogContentElement.wait.until(ExpectedConditions.elementToBeClickable(dialogContentElement.payBtn));
-        topNavElement.myClick(dialogContentElement.payBtn);
+        dialogContentElement.myClick(dialogContentElement.payBtn);
     }
 
     @When("The user enters their card details")
@@ -64,22 +65,26 @@ public class FinancePayment {
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.iframe));
         GWD.getDriver().switchTo().frame(dialogContentElement.iframe);
 
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.cardNumber));
-        topNavElement.myClick(dialogContentElement.cardNumber);
-        topNavElement.mySendKeys(dialogContentElement.cardNumber, ConfigReader.getProperty("cardNumber"));
+        List<String>cardNumber=dataTable.asList();
+        for (int i = 0; i <cardNumber.size() ; i++) {
+            dialogContentElement.wait.until(ExpectedConditions.visibilityOf((WebElement) dialogContentElement.cardNumber));
+            dialogContentElement.myClick(dialogContentElement.getWebElement(cardNumber.get(i)));
+        }
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf((WebElement)dialogContentElement.cardNumber));
+        dialogContentElement.mySendKeys((WebElement) dialogContentElement.cardNumber, ConfigReader.getProperty("cardNumber"));
 
-        int randomCVV = topNavElement.randomGenerator(900) + 100;
-        topNavElement.mySendKeys(dialogContentElement.expirationDate, Integer.toString(randomCVV));
-        int randomMonth = topNavElement.randomGenerator(12) + 1;
-        int randomYear = topNavElement.randomGenerator(10) + 25;
+        int randomCVV = dialogContentElement.randomGenerator(900) + 100;
+        dialogContentElement.mySendKeys(dialogContentElement.expirationDate, Integer.toString(randomCVV));
+        int randomMonth = dialogContentElement.randomGenerator(12) + 1;
+        int randomYear = dialogContentElement.randomGenerator(10) + 25;
         String expireDate = Integer.toString(randomMonth) + randomYear;
-        topNavElement.mySendKeys(dialogContentElement.expirationDate, expireDate);
+        dialogContentElement.mySendKeys(dialogContentElement.expirationDate, expireDate);
     }
 
     @When("The user confirms the payment")
     public void the_user_confirms_the_payment() {
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.payButton));
-        topNavElement.myClick(dialogContentElement.payButton);
+        dialogContentElement.myClick(dialogContentElement.payButton);
     }
 
     @Then("The user displays a confirmation message {string}")

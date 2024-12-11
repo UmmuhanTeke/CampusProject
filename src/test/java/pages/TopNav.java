@@ -65,7 +65,7 @@ public class TopNav extends ReusableMethods {
     @FindBy(xpath = "//td[text()=' 235 $ ']")
     public WebElement balanceDetailTextCtrl;
 
-    @FindBy(xpath = "//student-layout[@class='ng-star-inserted']")
+    @FindBy(xpath = "(//span[text()='Courses'])[1]")
     public List<WebElement> tabMenu;
 
     @FindBy(xpath = "(//span[text()='Courses'])[1]")
@@ -131,7 +131,15 @@ public class TopNav extends ReusableMethods {
             case "sendMessage": return this.sendMsgBtn;
             case "outboxMessage": return this.outboxBtn;
             case "newMessageIcon": return this.newMessageIcon;
-
+            case "coursesMenu": return this.coursesMenu;
+            case "calendarMenu": return this.calendarMenu;
+            case "attendanceMenu": return this.attendanceMenu;
+            case "assignmentsMenu": return this.assignmentsMenu;
+            case "gradingMenu": return this.gradingMenu;
+            case "hamburgerMenuButton": return this.hamburgerMenuButton;
+            case "announcementsBtn": return this.announcementsBtn;
+            case "announcementCloseBtn": return this.announcementCloseBtn;
+            case "messagesBtn": return this.messagesBtn;
         }
         return null;
     }

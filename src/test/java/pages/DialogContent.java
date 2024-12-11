@@ -213,7 +213,7 @@ public class DialogContent extends ReusableMethods {
     public WebElement payBtn;
 
     @FindBy(xpath = "//div[@class='p-CardNumberInput']")
-    public WebElement cardNumber;
+    public List<WebElement> cardNumber;
 
     @FindBy(xpath = "(//div[@class='p-Input'])[2]")
     public WebElement expirationDate;
