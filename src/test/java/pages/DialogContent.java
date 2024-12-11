@@ -317,6 +317,30 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//table[@class='ng-star-inserted']")
     public WebElement coursePlanTableVerify;
 
+    @FindBy(xpath = "//*[text()=' P ']")
+    public WebElement pIcon;
+
+    @FindBy(xpath = "//*[text()=' Published ']")
+    public WebElement pDescription;
+
+    @FindBy(xpath = "//*[text()=' S ']")
+    public WebElement sIcon;
+
+    @FindBy(xpath = "//*[text()=' Started ']")
+    public WebElement sDescription;
+
+    @FindBy(xpath = "//*[text()=' E ']")
+    public WebElement eIcon;
+
+    @FindBy(xpath = "//*[text()=' Ended ']")
+    public WebElement eDescription;
+
+    @FindBy(xpath = "//*[text()=' C ']")
+    public WebElement cIcon;
+
+    @FindBy(xpath = "//*[text()=' Cancelled ']")
+    public WebElement cDescription;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
