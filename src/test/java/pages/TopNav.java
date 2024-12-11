@@ -128,6 +128,9 @@ public class TopNav extends ReusableMethods {
     @FindBy(xpath = "//*[@icon='analytics']/button")
     public WebElement gradingButton;
 
+    @FindBy(xpath = "//span[text()='Calendar']")
+    public WebElement calendarButton;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
@@ -135,6 +138,7 @@ public class TopNav extends ReusableMethods {
             case "outboxMessage": return this.outboxBtn;
             case "newMessageIcon": return this.newMessageIcon;
             case "gradingButton": return this.gradingButton;
+            case "calendarButton": return this.calendarButton;
         }
         return null;
     }

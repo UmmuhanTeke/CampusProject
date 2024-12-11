@@ -287,6 +287,60 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//*[contains(text(), 'no data to display')]")
     public WebElement transcriptBySubjectVerify;
 
+    @FindBy(xpath = "//ms-icon-button[@icon='file-import']/button")
+    public WebElement fileSubmitBtn;
+
+    @FindBy(css = "[title='Rich Text Area']")
+    public WebElement textEditorControl;
+
+    @FindBy(xpath = "//*[@icon='save']/button")
+    public WebElement saveAsDraftBtn;
+
+    @FindBy(xpath = "//div[text()='Successfully saved as a draft']")
+    public WebElement draftSuccessfullyMsg;
+
+    @FindBy(xpath = "//mat-dialog-actions//*[@icon='file-import']/button")
+    public WebElement submitBtn;
+
+    @FindBy(xpath = "//div[text()='Successfully submitted to review']")
+    public WebElement submitMsgControl;
+
+    @FindBy(xpath = "//ms-icon-button[@icon='info']")
+    public WebElement assignmentsInfoBtn;
+
+    @FindBy(xpath = "//span[text()='New Submission']")
+    public WebElement newSubmissionBtn;
+
+    @FindBy(css = "[class='ng-star-inserted'] strong")
+    public WebElement dateVerify;
+
+    @FindBy(xpath = "//table[@class='ng-star-inserted']")
+    public WebElement coursePlanTableVerify;
+
+    @FindBy(xpath = "//*[text()=' P ']")
+    public WebElement pIcon;
+
+    @FindBy(xpath = "//*[text()=' Published ']")
+    public WebElement pDescription;
+
+    @FindBy(xpath = "//*[text()=' S ']")
+    public WebElement sIcon;
+
+    @FindBy(xpath = "//*[text()=' Started ']")
+    public WebElement sDescription;
+
+    @FindBy(xpath = "//*[text()=' E ']")
+    public WebElement eIcon;
+
+    @FindBy(xpath = "//*[text()=' Ended ']")
+    public WebElement eDescription;
+
+    @FindBy(xpath = "//*[text()=' C ']")
+    public WebElement cIcon;
+
+    @FindBy(xpath = "//*[text()=' Cancelled ']")
+    public WebElement cDescription;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
