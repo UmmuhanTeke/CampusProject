@@ -9,8 +9,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
-import java.util.List;
 
 public class ReusableMethods {
     public WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(ConfigReader.getIntProperty("explicit.wait")));
@@ -35,6 +36,20 @@ public class ReusableMethods {
     public void scrollToElement(WebElement elements) {
         JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
         js.executeScript("arguments[0].scrollIntoView();", elements);
+    }
+
+    public void robotExecute(int number){
+        try {
+            Robot robot =new Robot();
+            for (int i = 0; i < number; i++) {
+                robot.keyPress(KeyEvent.VK_TAB);
+                robot.keyRelease(KeyEvent.VK_TAB);
+            }
+            robot.keyPress(KeyEvent.VK_SPACE);
+            robot.keyRelease(KeyEvent.VK_SPACE);
+        } catch (AWTException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void verifyContainsText(WebElement element, String value) {
