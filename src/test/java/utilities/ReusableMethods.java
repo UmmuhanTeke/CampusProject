@@ -41,12 +41,12 @@ public class ReusableMethods {
     public void robotExecute(int number){
         try {
             Robot robot =new Robot();
-            for (int i = 0; i < number; i++) {
+            for (int i = 0; i <= number; i++) {
                 robot.keyPress(KeyEvent.VK_TAB);
                 robot.keyRelease(KeyEvent.VK_TAB);
             }
-            robot.keyPress(KeyEvent.VK_SPACE);
-            robot.keyRelease(KeyEvent.VK_SPACE);
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
         } catch (AWTException e) {
             throw new RuntimeException(e);
         }
