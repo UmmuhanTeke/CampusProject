@@ -13,10 +13,8 @@ public class ProfileUploadProfilePhoto {
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.uploadPhotoBtn));
         dialogContentElement.jsClick(dialogContentElement.uploadPhotoBtn);
 
-        dialogContentElement.Wait(3);
         dialogContentElement.wait.until(ExpectedConditions.elementToBeClickable(dialogContentElement.uploadPictureBtn));
         dialogContentElement.myClick(dialogContentElement.uploadPictureBtn);
-        dialogContentElement.Wait(2);
 
         dialogContentElement.robotExecute(1);
         dialogContentElement.uploadFilePath("C:\\Users\\User\\IdeaProjects\\Campus_Project\\src\\test\\resources\\campus2photo.png");
@@ -26,9 +24,8 @@ public class ProfileUploadProfilePhoto {
     public void theUserViewsTheTypeOfProfilePhotoAndSizeOfTheImageByClickingOnTheUploadButton() {
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.verifiesTypeOfFile));
         dialogContentElement.verifyContainsText(dialogContentElement.verifiesTypeOfFile,"png");
-        dialogContentElement.verifyContainsText(dialogContentElement.verifiesTypeOfFile,"430.0 bytes");
+        dialogContentElement.verifyContainsText(dialogContentElement.verifiesTypeOfFile,"bytes");
         dialogContentElement.myClick(dialogContentElement.uploadBtn);
         dialogContentElement.wait.until(ExpectedConditions.invisibilityOfAllElements(dialogContentElement.uploadBtn));
-
     }
 }

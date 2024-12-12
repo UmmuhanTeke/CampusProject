@@ -362,7 +362,7 @@ public class DialogContent extends ReusableMethods {
     @FindBy(css = "ms-standard-button[icon='print']")
     public WebElement printButton;
 
-    @FindBy(xpath = "//span[text()=' Upload ']")
+    @FindBy(xpath = "(//button[@color='primary'])[1]")
     public WebElement uploadBtn;
 
     public WebElement getWebElement(String strElementName) {
