@@ -368,6 +368,9 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//span[@class='file-info']")
     public WebElement verifiesTypeOfFile;
 
+    @FindBy(css = "ms-standard-button[icon='print']")
+    public WebElement printButton;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
