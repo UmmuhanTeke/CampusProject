@@ -365,6 +365,15 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "(//button[@color='primary'])[1]")
     public WebElement uploadBtn;
 
+    @FindBy(xpath = "(//div/button)[9]")
+    public WebElement previousButton;
+
+    @FindBy(xpath = "(//div/button)[10]")
+    public WebElement todayButton;
+
+    @FindBy(xpath = "(//div/button)[11]")
+    public WebElement nextButton;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
@@ -373,6 +382,9 @@ public class DialogContent extends ReusableMethods {
             case "courseGradeButton": return  this.courseGradeButton;
             case "studentTranscriptBtn": return this.studentTranscriptBtn;
             case "transcriptBySubjectBtn": return this.transcriptBySubjectBtn;
+            case "previousButton": return this.previousButton;
+            case "todayButton": return this.todayButton;
+            case "nextButton": return this.nextButton;
         }
         return null;
     }
