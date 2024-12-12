@@ -34,7 +34,6 @@ public class GradingPrint {
 
     @And("The user views PDF Document page and clicks on the Download button")
     public void theUserViewsPDFDocumentPageAndClicksOnTheDownloadButton() {
-
         String pageHandle = GWD.getDriver().getWindowHandle();
         Set<String> handles = GWD.getDriver().getWindowHandles();
         for (String handle : handles) {
