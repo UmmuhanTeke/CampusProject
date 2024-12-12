@@ -6,6 +6,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import pages.DialogContent;
 import pages.TopNav;
+import utilities.ConfigReader;
+import utilities.GWD;
 
 import java.util.List;
 import java.util.Random;
@@ -28,26 +30,49 @@ public class CalendarFeature {
     public void theUserViewsTodaySDateAndTheWeeklyCoursePlanByDefault() {
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.dateVerify));
         Assert.assertTrue(dialogContentElement.dateVerify.isDisplayed());
-        System.out.println(dialogContentElement.dateVerify.getText());
+
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.coursePlanTableVerify));
-        Assert.assertTrue(dialogContentElement.courseGradeTableVerify.isDisplayed());
-        System.out.println(dialogContentElement.coursePlanTableVerify.getText());
+        Assert.assertTrue(dialogContentElement.coursePlanTableVerify.isDisplayed());
     }
 
     @Then("The user views the icons \\(P,S,E,C) and descriptions of the scheduled lessons")
     public void theUserViewsTheIconsPSECAndDescriptionsOfTheScheduledLessons() {
+        Assert.assertTrue(dialogContentElement.pIcon.isDisplayed());
+        Assert.assertTrue(dialogContentElement.pDescription.isDisplayed());
+
+        Assert.assertTrue(dialogContentElement.sIcon.isDisplayed());
+        Assert.assertTrue(dialogContentElement.sDescription.isDisplayed());
+
+        Assert.assertTrue(dialogContentElement.eIcon.isDisplayed());
+        Assert.assertTrue(dialogContentElement.eDescription.isDisplayed());
+
+        Assert.assertTrue(dialogContentElement.cIcon.isDisplayed());
+        Assert.assertTrue(dialogContentElement.cDescription.isDisplayed());
     }
 
     @Given("The user is on the Calendar page")
     public void theUserIsOnTheCalendarPage() {
+        dialogContentElement.wait.until(ExpectedConditions.urlContains("calendar"));
+        Assert.assertTrue(GWD.getDriver().getCurrentUrl().contains("calendar"));
     }
 
     @Then("The user should view two links to navigate to the Weekly Course Plan and Calendar pages")
     public void theUserShouldViewTwoLinksToNavigateToTheWeeklyCoursePlanAndCalendarPages() {
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.weeklyCoursePlanBtn));
+        Assert.assertTrue(dialogContentElement.weeklyCoursePlanBtn.isDisplayed());
+
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.calendarBtn));
+        Assert.assertTrue(dialogContentElement.calendarBtn.isDisplayed());
     }
 
     @When("The user clicks on these links")
     public void theUserClicksOnTheseLinks() {
+        dialogContentElement.myClick(dialogContentElement.weeklyCoursePlanBtn);
+        Assert.assertTrue(dialogContentElement.coursePlanTableVerify.isDisplayed());
+
+        dialogContentElement.myClick(dialogContentElement.calendarBtn);
+        Assert.assertTrue(dialogContentElement.calendarTableVerify.isDisplayed());
+        System.out.println(dialogContentElement.calendarTableVerify.getText());
     }
 
     @Then("The user should be redirected to the respective page")

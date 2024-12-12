@@ -213,7 +213,7 @@ public class DialogContent extends ReusableMethods {
     public WebElement payBtn;
 
     @FindBy(xpath = "//div[@class='p-CardNumberInput']")
-    public WebElement cardNumber;
+    public List<WebElement> cardNumber;
 
     @FindBy(xpath = "(//div[@class='p-Input'])[2]")
     public WebElement expirationDate;
@@ -317,23 +317,38 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//table[@class='ng-star-inserted']")
     public WebElement coursePlanTableVerify;
 
-    @FindBy(xpath = "//*[text()='Profile']")
-    public WebElement profileControlText;
+    @FindBy(xpath = "//*[text()=' P ']")
+    public WebElement pIcon;
 
-    @FindBy(xpath = "//div[@class='user-info']/img")
-    public WebElement uploadPhotoBtn;
+    @FindBy(xpath = "//*[text()=' Published ']")
+    public WebElement pDescription;
 
-    @FindBy(xpath = "//h3[contains(@id,'mat-mdc-dialog-title')]")
-    public WebElement profilePhotoText;
+    @FindBy(xpath = "//*[text()=' S ']")
+    public WebElement sIcon;
 
-    @FindBy(xpath = "//*[@class='svg-inline--fa fa-upload']")
-    public WebElement uploadPictureBtn;
+    @FindBy(xpath = "//*[text()=' Started ']")
+    public WebElement sDescription;
 
-    @FindBy(xpath = "//input[@type='file']")
-    public WebElement uploadPicturePathText;
+    @FindBy(xpath = "//*[text()=' E ']")
+    public WebElement eIcon;
 
-    @FindBy(xpath = "//span[@class='file-info']")
-    public WebElement verifiesTypeOfFile;
+    @FindBy(xpath = "//*[text()=' Ended ']")
+    public WebElement eDescription;
+
+    @FindBy(xpath = "//*[text()=' C ']")
+    public WebElement cIcon;
+
+    @FindBy(xpath = "//*[text()=' Cancelled ']")
+    public WebElement cDescription;
+
+    @FindBy(xpath = "//*[contains(text(),' Weekly Course Plan ')]")
+    public WebElement weeklyCoursePlanBtn;
+
+    @FindBy(xpath = "(//*[text()=' Calendar '])[2]")
+    public WebElement calendarBtn;
+
+    @FindBy(xpath = "//table[@role='grid']")
+    public WebElement calendarTableVerify;
 
     public WebElement getWebElement(String strElementName) {
 
