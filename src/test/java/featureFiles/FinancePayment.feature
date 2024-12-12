@@ -11,6 +11,5 @@ Feature:Financial Payment Functionality
     And  The user clicks their name and is redirected to the payment page
     When The user enters the amount and clicks the pay button
     When The user enters their card details
-      | cardNumber |
     And  The user confirms the payment
-    Then The user displays a confirmation message "Payment Successful"
+    Then The user displays a confirmation message payment successfully
