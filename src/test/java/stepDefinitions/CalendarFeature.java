@@ -58,10 +58,21 @@ public class CalendarFeature {
 
     @Then("The user should view two links to navigate to the Weekly Course Plan and Calendar pages")
     public void theUserShouldViewTwoLinksToNavigateToTheWeeklyCoursePlanAndCalendarPages() {
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.weeklyCoursePlanBtn));
+        Assert.assertTrue(dialogContentElement.weeklyCoursePlanBtn.isDisplayed());
+
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.calendarBtn));
+        Assert.assertTrue(dialogContentElement.calendarBtn.isDisplayed());
     }
 
     @When("The user clicks on these links")
     public void theUserClicksOnTheseLinks() {
+        dialogContentElement.myClick(dialogContentElement.weeklyCoursePlanBtn);
+        Assert.assertTrue(dialogContentElement.coursePlanTableVerify.isDisplayed());
+
+        dialogContentElement.myClick(dialogContentElement.calendarBtn);
+        Assert.assertTrue(dialogContentElement.calendarTableVerify.isDisplayed());
+        System.out.println(dialogContentElement.calendarTableVerify.getText());
     }
 
     @Then("The user should be redirected to the respective page")

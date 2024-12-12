@@ -341,6 +341,15 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//*[text()=' Cancelled ']")
     public WebElement cDescription;
 
+    @FindBy(xpath = "//*[contains(text(),' Weekly Course Plan ')]")
+    public WebElement weeklyCoursePlanBtn;
+
+    @FindBy(xpath = "(//*[text()=' Calendar '])[2]")
+    public WebElement calendarBtn;
+
+    @FindBy(xpath = "//table[@role='grid']")
+    public WebElement calendarTableVerify;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
