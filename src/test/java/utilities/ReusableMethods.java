@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.awt.*;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
 
@@ -44,12 +45,37 @@ public class ReusableMethods {
             for (int i = 0; i <= number; i++) {
                 robot.keyPress(KeyEvent.VK_TAB);
                 robot.keyRelease(KeyEvent.VK_TAB);
+                Wait(1);
             }
             robot.keyPress(KeyEvent.VK_ENTER);
             robot.keyRelease(KeyEvent.VK_ENTER);
         } catch (AWTException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void uploadFilePath(String path){
+        Robot robot;
+        try {
+            robot=new Robot();
+        } catch (AWTException e) {
+            throw new RuntimeException(e);
+        }
+
+        StringSelection filePath=new StringSelection(path);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filePath, null);
+        Wait(1);
+
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_V);
+
+        robot.keyRelease(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+
+        Wait(1);
+
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
     }
 
     public void verifyContainsText(WebElement element, String value) {
