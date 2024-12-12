@@ -350,6 +350,24 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//table[@role='grid']")
     public WebElement calendarTableVerify;
 
+    @FindBy(xpath = "//*[text()='Profile']")
+    public WebElement profileControlText;
+
+    @FindBy(xpath = "//div[@class='user-info']/img")
+    public WebElement uploadPhotoBtn;
+
+    @FindBy(xpath = "//h3[contains(@id,'mat-mdc-dialog-title')]")
+    public WebElement profilePhotoText;
+
+    @FindBy(xpath = "//*[@class='svg-inline--fa fa-upload']")
+    public WebElement uploadPictureBtn;
+
+    @FindBy(xpath = "//input[@type='file']")
+    public WebElement uploadPicturePathText;
+
+    @FindBy(xpath = "//span[@class='file-info']")
+    public WebElement verifiesTypeOfFile;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {

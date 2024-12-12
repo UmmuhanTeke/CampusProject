@@ -31,6 +31,7 @@ public class ProfileUploadProfilePhoto {
         dialogContentElement.myClick(dialogContentElement.uploadPictureBtn);
         dialogContentElement.Wait(2);
 
+
         try {
             Robot robot=new Robot();
             robot.keyPress(KeyEvent.VK_A);
