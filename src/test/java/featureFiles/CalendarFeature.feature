@@ -12,8 +12,6 @@ Feature:Calendar Feature Functionality
 
     Then  The user views today's date and the Weekly Course Plan by default
     Then  The user views the icons (P,S,E,C) and descriptions of the scheduled lessons
-
-  Scenario:Navigating to the Weekly Course Plan and Calendar Pages
     Given The user is on the Calendar page
     Then  The user should view two links to navigate to the Weekly Course Plan and Calendar pages
     When  The user clicks on these links
