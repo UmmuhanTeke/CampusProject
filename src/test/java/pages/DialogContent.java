@@ -422,6 +422,18 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "(//*[@class='ng-fa-icon'])[8]")
     public WebElement newMessagesCloseBtn;
 
+    @FindBy(xpath = "(//div[contains(@class, 'mat-mdc-select-value')])[3]")
+    public WebElement semesterBtn;
+
+    @FindBy(xpath = "(//span[@class='mdc-list-itemprimary-text'])[1]")
+    public WebElement semesterAllBtn;
+
+    @FindBy(xpath = "//div[@class='mat-mdc-tooltip-surface mdc-tooltipsurface']")
+    public WebElement assingmentsCount;
+
+    @FindBy(xpath = "//span[text()=' Published ']")
+    public List<WebElement> assingmentsPublished;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
