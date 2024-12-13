@@ -371,6 +371,18 @@ public class DialogContent extends ReusableMethods {
     @FindBy(css = "ms-standard-button[icon='print']")
     public WebElement printButton;
 
+    @FindBy(xpath = "(//div[contains(@class, 'mat-mdc-select-value')])[3]")
+    public WebElement semesterBtn;
+
+    @FindBy(xpath = "(//span[@class='mdc-list-item__primary-text'])[1]")
+    public WebElement semesterAllBtn;
+
+    @FindBy(xpath = "//div[@class='mat-mdc-tooltip-surface mdc-tooltip__surface']")
+    public WebElement assingmentsCount;
+
+    @FindBy(xpath = "//span[text()=' Published ']")
+    public List<WebElement> assingmentsPublished;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
