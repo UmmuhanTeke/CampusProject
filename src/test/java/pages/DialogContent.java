@@ -365,13 +365,13 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "(//button[@color='primary'])[1]")
     public WebElement uploadBtn;
 
-    @FindBy(xpath = "(//div/button)[9]")
+    @FindBy(xpath = "(//div/button)[8]")
     public WebElement previousButton;
 
-    @FindBy(xpath = "(//div/button)[10]")
+    @FindBy(xpath = "(//div/button)[9]")
     public WebElement todayButton;
 
-    @FindBy(xpath = "(//div/button)[11]")
+    @FindBy(xpath = "(//div/button)[10]")
     public WebElement nextButton;
 
     @FindBy(xpath = "//strong[contains(text(),' Overdue ')]")
