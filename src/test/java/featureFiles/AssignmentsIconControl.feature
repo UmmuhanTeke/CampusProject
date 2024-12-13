@@ -18,15 +18,13 @@ Feature: Assignment Icons Control Functionality
     And  The user goes back the Assignment list
       | backButton |
 
-    When The user clicks on the Submit icon
-    Then The user verifies the submission window on the page
+    Then The user clicks on the Submit icon and verifies the submission window on the page
+    And  The user goes back the Assignment list
+      | backButton |
+
+    Then The user clicks on the Discussion icon and verifies the discussion window on the page
     And  The user goes back the Assignment list
       | backButton |
 
     When The user clicks on the Mark it icon
     Then The user verifies marked as a favorite
-    And  The user goes back the Assignment list
-      | backButton |
-
-    When The user clicks on the Discussion icon
-    Then The user verifies the discussion window on the page

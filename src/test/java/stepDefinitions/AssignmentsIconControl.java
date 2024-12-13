@@ -42,8 +42,9 @@ public class AssignmentsIconControl {
         dialogContentElement.wait.until(ExpectedConditions.urlContains("info"));
         Assert.assertTrue(GWD.getDriver().getCurrentUrl().contains("info"));
 
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.courseText));
         dialogContentElement.verifyContainsText(dialogContentElement.courseText,"Course");
-        dialogContentElement.verifyContainsText(dialogContentElement.homeworkText,"Homework");
+        dialogContentElement.verifyContainsText(dialogContentElement.assignmentStatusText,"Assignment Status");
         dialogContentElement.verifyContainsText(dialogContentElement.descriptionText,"Description");
     }
 
@@ -66,40 +67,28 @@ public class AssignmentsIconControl {
         }
     }
 
-    @When("The user clicks on the Submit icon")
-    public void theUserClicksOnTheSubmitIcon() {
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.submitIcon));
-        if ( dialogContentElement.submitIcon.isDisplayed()){
-            dialogContentElement.myClick(dialogContentElement.submitIcon);
-        }
+    @Then("The user clicks on the Submit icon and verifies the submission window on the page")
+    public void theUserClicksOnTheSubmitIconAndVerifiesTheSubmissionWindowOnThePage() {
+        dialogContentElement.clickAndEsc(dialogContentElement.submitIcon,dialogContentElement.submitBtn);
     }
 
-    @Then("The user verifies the submission window on the page")
-    public void theUserVerifiesTheSubmissionWindowOnThePage() {
-        dialogContentElement.Wait(3);
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.submitWindow));
-        System.out.println("1:"+dialogContentElement.submitWindow.isDisplayed());
-
-        GWD.getDriver().switchTo().frame(0);
-        System.out.println("2:"+dialogContentElement.textBox.isDisplayed());
-        GWD.getDriver().switchTo().parentFrame();
-
-        System.out.println("3:"+dialogContentElement.submitBtn.isDisplayed());
+    @Then("The user clicks on the Discussion icon and verifies the discussion window on the page")
+    public void theUserClicksOnTheDiscussionIconAndVerifiesTheDiscussionWindowOnThePage() {
+        dialogContentElement.clickAndEsc(dialogContentElement.discussionIcon,dialogContentElement.contactIcon);
     }
 
     @When("The user clicks on the Mark it icon")
     public void theUserClicksOnTheMarkItIcon() {
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.markItIcon));
+        System.out.println(dialogContentElement.markItIcon.isSelected());
+        System.out.println(dialogContentElement.markItIcon.isEnabled());
+        System.out.println(dialogContentElement.markItIcon.isDisplayed());
+        dialogContentElement.myClick(dialogContentElement.markItIcon);
     }
 
     @Then("The user verifies marked as a favorite")
     public void theUserVerifiesMarkedAsAFavorite() {
+
     }
 
-    @When("The user clicks on the Discussion icon")
-    public void theUserClicksOnTheDiscussionIcon() {
-    }
-
-    @Then("The user verifies the discussion window on the page")
-    public void theUserVerifiesTheDiscussionWindowOnThePage() {
-    }
 }
