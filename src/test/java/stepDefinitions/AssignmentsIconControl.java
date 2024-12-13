@@ -80,11 +80,18 @@ public class AssignmentsIconControl {
     @Then("The user clicks on the Mark it icon and verifies marked as a favorite")
     public void theUserClicksOnTheMarkItIconAndVerifiesMarkedAsAFavorite() {
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.markItIcon));
-        System.out.println("1:"+dialogContentElement.markItIcon.isSelected());
-        System.out.println(dialogContentElement.markItIcon.isEnabled());
-        System.out.println(dialogContentElement.markItIcon.isDisplayed());
+        boolean found=false;
+        if (dialogContentElement.svg.getAttribute("data-prefix").contains("fal")){
+            found=true;
+        }
+        Assert.assertTrue(found);
 
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.markItIcon));
         dialogContentElement.myClick(dialogContentElement.markItIcon);
-        System.out.println("2:"+dialogContentElement.markItIcon.isSelected());
+
+        if (dialogContentElement.svg.getAttribute("data-prefix").contains("fas")){
+            found=true;
+        }
+        Assert.assertTrue(found);
     }
 }
