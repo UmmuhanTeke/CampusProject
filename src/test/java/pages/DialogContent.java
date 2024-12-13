@@ -461,6 +461,9 @@ public class DialogContent extends ReusableMethods {
     @FindBy(css = "[class='container']")
     public WebElement container;
 
+    @FindBy(xpath = "(//*[@data-icon='star'])[3]")
+    public WebElement svg;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {

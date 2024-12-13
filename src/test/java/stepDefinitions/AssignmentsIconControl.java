@@ -93,7 +93,5 @@ public class AssignmentsIconControl {
             found=true;
         }
         Assert.assertTrue(found);
-
-        dialogContentElement.myClick(dialogContentElement.markItIcon);
     }
 }
