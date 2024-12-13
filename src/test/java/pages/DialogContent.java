@@ -410,6 +410,18 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//mat-dialog-container[contains(@id,'mat-mdc-dialog')]")
     public WebElement submitWindow;
 
+    @FindBy(xpath = "(//td[text()=' 1 $ '])[1]")
+    public WebElement fileBalanceDetailText;
+
+    @FindBy(xpath = "(//ms-standard-button[@icon='eye']/button)[1]")
+    public WebElement paymentStripeBtn;
+
+    @FindBy(xpath = "//*[text()='Payment is completed']")
+    public WebElement paymentCompletedText;
+
+    @FindBy(xpath = "(//*[@class='ng-fa-icon'])[8]")
+    public WebElement newMessagesCloseBtn;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {

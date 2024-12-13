@@ -4,6 +4,7 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -23,7 +24,7 @@ public class FinancePayment {
 
     @When("The user hovers over the Hamburger Menu and clicks on My Finance")
     public void the_user_hovers_over_the_hamburger_menu_and_clicks_on_my_finance() {
-        topNavElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.hamburgerMenu));
+        topNavElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.hamburgerMenuBtn));
         topNavElement.myClick(topNavElement.hamburgerMenuBtn);
 
         topNavElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.financeButton));
@@ -68,12 +69,12 @@ public class FinancePayment {
         dialogContentElement.wait.until(ExpectedConditions.elementToBeClickable(dialogContentElement.cardNumberBox));
         dialogContentElement.mySendKeys(dialogContentElement.cardNumberBox, ConfigReader.getProperty("cardNumber"));
 
-        int randomCVV = dialogContentElement.randomGenerator(900) + 100;
-        dialogContentElement.mySendKeys(dialogContentElement.securityCodeBox, Integer.toString(randomCVV));
         int randomMonth = dialogContentElement.randomGenerator(11) + 1;
         int randomYear = dialogContentElement.randomGenerator(12) + 25;
         String expireDate = Integer.toString(randomMonth) + randomYear;
         dialogContentElement.mySendKeys(dialogContentElement.expirationDateBox, expireDate);
+        int randomCVV = dialogContentElement.randomGenerator(900) + 100;
+        dialogContentElement.mySendKeys(dialogContentElement.securityCodeBox, Integer.toString(randomCVV));
 
         GWD.getDriver().switchTo().parentFrame();
     }
@@ -92,7 +93,20 @@ public class FinancePayment {
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.feeBalanceButton));
         dialogContentElement.myClick(dialogContentElement.feeBalanceButton);
 
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.feeBalanceDetailText));
+        dialogContentElement.scrollToElement(dialogContentElement.feeBalanceDetailText);
+
         topNavElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.newMessageIcon));
         topNavElement.jsClick(topNavElement.newMessageIcon);
+
+        dialogContentElement.wait.until(ExpectedConditions.elementToBeClickable(dialogContentElement.paymentStripeBtn));
+        dialogContentElement.jsClick(dialogContentElement.paymentStripeBtn);
+
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.paymentCompletedText));
+        dialogContentElement.verifyContainsText(dialogContentElement.paymentCompletedText,"completed");
+        Assert.assertTrue(dialogContentElement.paymentCompletedText.isDisplayed());
+
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.newMessagesCloseBtn));
+        dialogContentElement.myClick(dialogContentElement.newMessagesCloseBtn);
     }
 }
