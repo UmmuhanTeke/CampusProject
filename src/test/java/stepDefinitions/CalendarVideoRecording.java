@@ -1,26 +1,46 @@
 package stepDefinitions;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.DialogContent;
-import pages.TopNav;
 
+import java.util.List;
 import java.util.Random;
 
 public class CalendarVideoRecording {
     DialogContent dialogContentElement = new DialogContent();
-    TopNav topNavElement = new TopNav();
     Random random = new Random();
 
     @When("The user clicks on a completed \\(E) course")
     public void theUserClicksOnACompletedECourse() {
+        try {
+            List<WebElement> endedLessons = dialogContentElement.endedLessonBtn;
+
+            if (!endedLessons.isEmpty()) {
+                int randomIndex = random.nextInt(endedLessons.size());
+                dialogContentElement.myClick(endedLessons.get(randomIndex));
+                dialogContentElement.verifyContainsText(dialogContentElement.popUpVerify, "Course Meeting");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Then("The user views the Recording button to access the course recording and clicks on it")
-    public void theUserViewsTheRecordingButtonToAccessTheCourseRecordingAndClicksOnIt() {
+    public void theUserViewsTheRecordingButtonToAccessTheCourseRecordingAndClicksOnIt(DataTable recordingBtn) {
+        List<String> recordingButton = recordingBtn.asList();
+
+        for (int i = 0; i < recordingButton.size(); i++) {
+            dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.recordingButton));
+            dialogContentElement.myClick(dialogContentElement.getWebElement(recordingButton.get(i)));
+        }
     }
 
     @And("The user accesses the course video")
     public void theUserAccessesTheCourseVideo() {
+
     }
 
     @Then("The user views the Play button in the course video and clicks on it")
