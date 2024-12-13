@@ -413,7 +413,7 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "(//td[contains(text(),'1 $')])[1]")
     public WebElement fileBalanceDetailText;
 
-    @FindBy(xpath = "(//ms-standard-button[@icon='eye']/button)[1]")
+    @FindBy(xpath = "(//button//span[@class='mat-focus-indicator'])[36]")
     public WebElement paymentStripeBtn;
 
     @FindBy(xpath = "//*[text()='Payment is completed']")
