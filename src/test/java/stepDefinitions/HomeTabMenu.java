@@ -30,19 +30,20 @@ public class HomeTabMenu {
 
     @And("The user clicks on the Hamburger menu and Hamburger submenu")
     public void theUserClicksOnTheHamburgerMenuAndHamburgerSubmenu() {
-        topNavElement.Wait(2);
-        topNavElement.myClick(topNavElement.hamburgerMenu);
 
         List<String> containsURL =new ArrayList<>();
         Collections.addAll(containsURL,"new","inbox","outbox","trash");
-        for (int i = 0; i < topNavElement.msgSubMenuList.size(); i++) {
+        for (int i = 0; i < 4; i++) {
+            topNavElement.Wait(2);
             topNavElement.myClick(topNavElement.hamburgerMenu);
-            topNavElement.hoverOver(topNavElement.msgSubMenuList.get(i));
+            topNavElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.messagingBtn));
+            topNavElement.hoverOver(topNavElement.messagingBtn);
             topNavElement.wait.until(ExpectedConditions.visibilityOfAllElements(topNavElement.msgSubMenuList));
+            topNavElement.myClick(topNavElement.msgSubMenuList.get(i));
             topNavElement.wait.until(ExpectedConditions.urlContains(containsURL.get(i)));
-            Assert.assertTrue(topNavElement.msgSubMenuList.get(i).isDisplayed());
         }
 
+        topNavElement.myClick(topNavElement.hamburgerMenu);
         topNavElement.hoverOver(topNavElement.financeBtn);
         topNavElement.jsClick(topNavElement.myFinance);
         topNavElement.wait.until(ExpectedConditions.urlContains("finance"));
