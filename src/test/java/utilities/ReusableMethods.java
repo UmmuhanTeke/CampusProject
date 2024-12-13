@@ -22,6 +22,14 @@ public class ReusableMethods {
         element.click();
     }
 
+    public void clickAndEsc(WebElement clickElement,WebElement assertElement){
+        wait.until(ExpectedConditions.elementToBeClickable(clickElement));
+        clickElement.click();
+        wait.until(ExpectedConditions.visibilityOfAllElements(assertElement));
+        Assert.assertTrue(assertElement.isDisplayed());
+        new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
+    }
+
     public void mySendKeys(WebElement element, String text) {
         wait.until(ExpectedConditions.visibilityOf(element));
         scrollToElement(element);

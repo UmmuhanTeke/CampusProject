@@ -350,20 +350,11 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//table[@role='grid']")
     public WebElement calendarTableVerify;
 
-    @FindBy(xpath = "//*[text()='Profile']")
-    public WebElement profileControlText;
-
     @FindBy(xpath = "//div[@class='user-info']/img")
     public WebElement uploadPhotoBtn;
 
-    @FindBy(xpath = "//h3[contains(@id,'mat-mdc-dialog-title')]")
-    public WebElement profilePhotoText;
-
-    @FindBy(xpath = "//*[@class='svg-inline--fa fa-upload']")
+    @FindBy(css = "mat-form-field button")
     public WebElement uploadPictureBtn;
-
-    @FindBy(xpath = "//input[@type='file']")
-    public WebElement uploadPicturePathText;
 
     @FindBy(xpath = "//span[@class='file-info']")
     public WebElement verifiesTypeOfFile;
@@ -371,17 +362,65 @@ public class DialogContent extends ReusableMethods {
     @FindBy(css = "ms-standard-button[icon='print']")
     public WebElement printButton;
 
-    @FindBy(xpath = "(//div[contains(@class, 'mat-mdc-select-value')])[3]")
-    public WebElement semesterBtn;
+    @FindBy(xpath = "(//button[@color='primary'])[1]")
+    public WebElement uploadBtn;
 
-    @FindBy(xpath = "(//span[@class='mdc-list-item__primary-text'])[1]")
-    public WebElement semesterAllBtn;
+    @FindBy(xpath = "(//div/button)[8]")
+    public WebElement previousButton;
 
-    @FindBy(xpath = "//div[@class='mat-mdc-tooltip-surface mdc-tooltip__surface']")
-    public WebElement assingmentsCount;
+    @FindBy(xpath = "(//div/button)[9]")
+    public WebElement todayButton;
 
-    @FindBy(xpath = "//span[text()=' Published ']")
-    public List<WebElement> assingmentsPublished;
+    @FindBy(xpath = "(//div/button)[10]")
+    public WebElement nextButton;
+
+    @FindBy(xpath = "//strong[contains(text(),' Overdue ')]")
+    public WebElement overdueText;
+
+    @FindBy(xpath = "//td/div")
+    public List<WebElement> lessonsButton;
+
+    @FindBy(xpath = "//*[contains(text(),'not been started')]")
+    public WebElement lessonMessage;
+
+    @FindBy(xpath = "(//div[@fxlayoutalign.lt-md='space-between center'])[3]")
+    public WebElement iconsMenu;
+
+    @FindBy(xpath = "(//ms-icon-button[@icon='info'])[3]")
+    public WebElement infoIcon;
+
+    @FindBy(xpath = "//strong[text()='Course:']")
+    public WebElement courseText;
+
+    @FindBy(xpath = "//div[text()='Homework']")
+    public WebElement homeworkText;
+
+    @FindBy(xpath = "//span[text()='Description']")
+    public WebElement descriptionText;
+
+    @FindBy(xpath = "//div[@class='ng-star-inserted']/button")
+    public WebElement backIcon;
+
+    @FindBy(xpath = "//div[@class='assignment ng-star-inserted']")
+    public List<WebElement>assignmentsList;
+
+    @FindBy(xpath = "(//ms-icon-button[@icon='file-import']/button)[3]")
+    public WebElement submitIcon;
+
+    @FindBy(xpath = "//mat-dialog-container[contains(@id,'mat-mdc-dialog')]")
+    public WebElement submitWindow;
+
+    @FindBy(xpath = "(//td[text()=' 1 $ '])[1]")
+    public WebElement fileBalanceDetailText;
+
+    @FindBy(xpath = "(//ms-standard-button[@icon='eye']/button)[1]")
+    public WebElement paymentStripeBtn;
+
+    @FindBy(xpath = "//*[text()='Payment is completed']")
+    public WebElement paymentCompletedText;
+
+    @FindBy(xpath = "(//*[@class='ng-fa-icon'])[8]")
+    public WebElement newMessagesCloseBtn;
 
     public WebElement getWebElement(String strElementName) {
 
@@ -391,6 +430,11 @@ public class DialogContent extends ReusableMethods {
             case "courseGradeButton": return  this.courseGradeButton;
             case "studentTranscriptBtn": return this.studentTranscriptBtn;
             case "transcriptBySubjectBtn": return this.transcriptBySubjectBtn;
+            case "previousButton": return this.previousButton;
+            case "todayButton": return this.todayButton;
+            case "nextButton": return this.nextButton;
+            case "backButton" : return this.backIcon;
+
         }
         return null;
     }
