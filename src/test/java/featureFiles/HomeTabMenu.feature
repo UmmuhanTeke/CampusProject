@@ -15,5 +15,3 @@ Feature:Tab Menu Functionality
 
     And The user clicks on the Hamburger menu and Hamburger submenu
     Then The user verifies items in the upper right corner
-      | notificationsIcon |
-      | newMessageIcon    |

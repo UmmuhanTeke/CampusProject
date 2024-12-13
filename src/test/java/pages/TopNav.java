@@ -101,10 +101,10 @@ public class TopNav extends ReusableMethods {
     @FindBy(xpath = "//span[text()='My Surveys']")
     public WebElement mySurveysBtn;
 
-    @FindBy(xpath = "(//span[@class='mat-mdc-button-persistent-ripple mdc-icon-button__ripple'])[1]")
-    public WebElement announcementsBtn;
+    @FindBy(css = "[fxlayoutalign='space-between center']")
+    public WebElement dialogTitle;
 
-    @FindBy(xpath = "(//span[@class='mat-mdc-button-persistent-ripple mdc-icon-button__ripple'])[2]")
+    @FindBy(xpath = "//user-message-bell/button")
     public WebElement messagesBtn;
 
     @FindBy(xpath = "//button[@aria-label='Close dialog']")
