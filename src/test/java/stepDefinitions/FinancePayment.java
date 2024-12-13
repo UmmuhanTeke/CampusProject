@@ -1,22 +1,13 @@
 package stepDefinitions;
 
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.apache.commons.lang3.RandomStringUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import pages.DialogContent;
 import pages.TopNav;
 import utilities.ConfigReader;
 import utilities.GWD;
-
-import java.util.List;
-import java.util.Random;
-import java.util.random.RandomGenerator;
 
 public class FinancePayment {
     DialogContent dialogContentElement = new DialogContent();
@@ -71,7 +62,7 @@ public class FinancePayment {
 
         int randomMonth = dialogContentElement.randomGenerator(11) + 1;
         int randomYear = dialogContentElement.randomGenerator(12) + 25;
-        String expireDate = Integer.toString(randomMonth) + randomYear;
+        String expireDate = (randomMonth) + Integer.toString(randomYear);
         dialogContentElement.mySendKeys(dialogContentElement.expirationDateBox, expireDate);
         int randomCVV = dialogContentElement.randomGenerator(900) + 100;
         dialogContentElement.mySendKeys(dialogContentElement.securityCodeBox, Integer.toString(randomCVV));
@@ -102,14 +93,10 @@ public class FinancePayment {
         topNavElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.newMessageIcon));
         topNavElement.jsClick(topNavElement.newMessageIcon);
 
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.viewIconBtn));
-        dialogContentElement.jsClick(dialogContentElement.viewIconBtn);
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.paymentStripeBtn));
+        dialogContentElement.myClick(dialogContentElement.paymentStripeBtn);
 
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.paymentCompletedText));
         dialogContentElement.verifyContainsText(dialogContentElement.paymentCompletedText, "completed");
         Assert.assertTrue(dialogContentElement.paymentCompletedText.isDisplayed());
-
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.newMessagesCloseBtn));
-        dialogContentElement.myClick(dialogContentElement.newMessagesCloseBtn);
     }
 }

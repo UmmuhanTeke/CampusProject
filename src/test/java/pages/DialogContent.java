@@ -413,7 +413,7 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "(//td[contains(text(),'1 $')])[1]")
     public WebElement fileBalanceDetailText;
 
-    @FindBy(xpath = "(//ms-standard-button[@icon='eye']/button)[1]")
+    @FindBy(xpath = "(//button//span[@class='mat-focus-indicator'])[36]")
     public WebElement paymentStripeBtn;
 
     @FindBy(xpath = "//*[text()='Payment is completed']")
@@ -447,7 +447,7 @@ public class DialogContent extends ReusableMethods {
     public WebElement markItIcon;
 
     @FindBy(xpath = "//*[text()='E']")
-    public WebElement endedLessonBtn;
+    public List<WebElement> endedLessonBtn;
 
     @FindBy(xpath = "//span[contains(text(), 'Course Meeting')]")
     public WebElement popUpVerify;
@@ -455,8 +455,11 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//span[text()='Recording']")
     public WebElement recordingButton;
 
-    @FindBy(xpath = "(//*[@data-icon='star'])[3]")
-    public WebElement svg;
+    @FindBy(xpath = "//div[@id='root']//div/span")
+    public WebElement videoPopUpVerify;
+
+    @FindBy(css = "[class='container']")
+    public WebElement container;
 
     public WebElement getWebElement(String strElementName) {
 
@@ -470,7 +473,7 @@ public class DialogContent extends ReusableMethods {
             case "todayButton": return this.todayButton;
             case "nextButton": return this.nextButton;
             case "backButton" : return this.backIcon;
-
+            case "recordingButton": return this.recordingButton;
         }
         return null;
     }
