@@ -77,18 +77,14 @@ public class AssignmentsIconControl {
         dialogContentElement.clickAndEsc(dialogContentElement.discussionIcon,dialogContentElement.contactIcon);
     }
 
-    @When("The user clicks on the Mark it icon")
-    public void theUserClicksOnTheMarkItIcon() {
+    @Then("The user clicks on the Mark it icon and verifies marked as a favorite")
+    public void theUserClicksOnTheMarkItIconAndVerifiesMarkedAsAFavorite() {
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.markItIcon));
-        System.out.println(dialogContentElement.markItIcon.isSelected());
+        System.out.println("1:"+dialogContentElement.markItIcon.isSelected());
         System.out.println(dialogContentElement.markItIcon.isEnabled());
         System.out.println(dialogContentElement.markItIcon.isDisplayed());
+
         dialogContentElement.myClick(dialogContentElement.markItIcon);
+        System.out.println("2:"+dialogContentElement.markItIcon.isSelected());
     }
-
-    @Then("The user verifies marked as a favorite")
-    public void theUserVerifiesMarkedAsAFavorite() {
-
-    }
-
 }

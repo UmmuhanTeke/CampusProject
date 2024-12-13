@@ -26,5 +26,4 @@ Feature: Assignment Icons Control Functionality
     And  The user goes back the Assignment list
       | backButton |
 
-    When The user clicks on the Mark it icon
-    Then The user verifies marked as a favorite
+    Then The user clicks on the Mark it icon and verifies marked as a favorite
