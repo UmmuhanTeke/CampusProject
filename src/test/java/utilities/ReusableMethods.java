@@ -22,9 +22,10 @@ public class ReusableMethods {
         element.click();
     }
 
-    public void clickAndEsc(WebElement element){
+    public void clickAndEsc(WebElement element,String text,WebElement assertElement){
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
+        Assert.assertTrue(assertElement.getText().contains(text));
         new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
     }
 
