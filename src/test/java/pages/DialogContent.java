@@ -422,6 +422,7 @@ public class DialogContent extends ReusableMethods {
             case "todayButton": return this.todayButton;
             case "nextButton": return this.nextButton;
             case "backButton" : return this.backIcon;
+
         }
         return null;
     }

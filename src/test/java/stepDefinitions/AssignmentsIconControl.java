@@ -83,6 +83,7 @@ public class AssignmentsIconControl {
         GWD.getDriver().switchTo().frame(0);
         System.out.println("2:"+dialogContentElement.textBox.isDisplayed());
         GWD.getDriver().switchTo().parentFrame();
+
         System.out.println("3:"+dialogContentElement.submitBtn.isDisplayed());
     }
 
