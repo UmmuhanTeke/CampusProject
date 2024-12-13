@@ -13,4 +13,4 @@ Feature: View assigned tasks
     When The user clicks on the Assignment button
     Then The user clicks on the Semester link and select All
     Then The user hovers over the Assignments link
-    Then the user should see all assigned tasks on the page
+    Then The user should see all assigned tasks on the page

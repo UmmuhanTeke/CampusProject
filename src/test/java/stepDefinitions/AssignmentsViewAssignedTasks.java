@@ -29,7 +29,7 @@ public class AssignmentsViewAssignedTasks {
         dialogContentElement.myClick(dialogContentElement.semesterAllBtn);
     }
 
-    @Then("the user should see all assigned tasks on the page")
+    @Then("The user should see all assigned tasks on the page")
     public void theUserShouldSeeAllAssignedTasksOnThePage() {
         String expectedTaskCount = dialogContentElement.assingmentsCount.getText().trim();
         List<WebElement> displayedTasks = dialogContentElement.assingmentsPublished;
