@@ -458,6 +458,9 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//div[@id='root']//div/span")
     public WebElement videoPopUpVerify;
 
+    @FindBy(css = "[class='container']")
+    public WebElement container;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
