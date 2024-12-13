@@ -138,7 +138,7 @@ public class TopNav extends ReusableMethods {
             case "outboxMessage": return this.outboxBtn;
             case "newMessageIcon": return this.newMessageIcon;
             case "gradingButton": return this.gradingButton;
-            case "calendarButton": return this.calendarMenu;
+            case "calendarButton": return this.calendarButton;
             case "coursesButton": return this.coursesMenu;
             case "attendanceButton": return this.attendanceMenu;
             case "assignmentsButton": return this.assignmentsMenu;
