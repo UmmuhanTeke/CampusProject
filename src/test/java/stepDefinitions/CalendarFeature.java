@@ -99,7 +99,7 @@ public class CalendarFeature {
         }
     }
 
-    @Then("The user should view the courses they are responsible for")
+    @Then("The user views the courses they are responsible for")
     public void theUserShouldViewTheCoursesTheyAreResponsibleFor() {
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.coursePlanTableVerify));
         Assert.assertTrue(dialogContentElement.coursePlanTableVerify.isDisplayed());

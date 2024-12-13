@@ -39,6 +39,8 @@ public class HomepageLogoCheck {
                 GWD.getDriver().switchTo().window(handle);
                 topNavElement.wait.until(ExpectedConditions.urlToBe(ConfigReader.getProperty("technoURL")));
                 Assert.assertTrue(GWD.getDriver().getCurrentUrl().equalsIgnoreCase(ConfigReader.getProperty("technoURL")));
+                GWD.getDriver().switchTo().window(handle);
+                break;
             }
         }
     }

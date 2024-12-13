@@ -28,6 +28,6 @@ Feature:Calendar Feature Functionality
       | nextButton     |
 
     Given The user is on the Weekly Course Plan page
-    Then  The user should view the courses they are responsible for
+    Then  The user views the courses they are responsible for
     When  The user clicks on a course
     Then  The user should view the details of that course
