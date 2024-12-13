@@ -374,6 +374,9 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "(//div/button)[11]")
     public WebElement nextButton;
 
+    @FindBy(xpath = "//strong[contains(text(),' Overdue ')]")
+    public WebElement overdueText;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {

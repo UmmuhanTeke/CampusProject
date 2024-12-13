@@ -3,8 +3,11 @@ package stepDefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.DialogContent;
 
 public class AssignmentIconControl {
+    DialogContent dialogContentElement = new DialogContent();
+
     @When("The user selects a assignment is selected from the list and views the icons next to the assignment")
     public void theUserSelectsAAssignmentIsSelectedFromTheListAndViewsTheIconsNextToTheAssignment() {
     }
