@@ -447,7 +447,7 @@ public class DialogContent extends ReusableMethods {
     public WebElement markItIcon;
 
     @FindBy(xpath = "//*[text()='E']")
-    public WebElement endedLessonBtn;
+    public List<WebElement> endedLessonBtn;
 
     @FindBy(xpath = "//span[contains(text(), 'Course Meeting')]")
     public WebElement popUpVerify;
@@ -455,8 +455,8 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//span[text()='Recording']")
     public WebElement recordingButton;
 
-    @FindBy(css = "[class='container']")
-    public WebElement container;
+    @FindBy(xpath = "//div[@id='root']//div/span")
+    public WebElement videoPopUpVerify;
 
     public WebElement getWebElement(String strElementName) {
 
@@ -470,7 +470,7 @@ public class DialogContent extends ReusableMethods {
             case "todayButton": return this.todayButton;
             case "nextButton": return this.nextButton;
             case "backButton" : return this.backIcon;
-
+            case "recordingButton": return this.recordingButton;
         }
         return null;
     }
