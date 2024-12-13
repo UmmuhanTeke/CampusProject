@@ -8,7 +8,7 @@ Feature:Tab Menu Functionality
   Scenario:Clicking the Tab Menu Links
     When The user verifies Header menu by clicking on the Header menu links
       | coursesButton     |
-      | calenderButton    |
+      | calendarButton    |
       | attendanceButton  |
       | assignmentsButton |
       | gradingButton     |
