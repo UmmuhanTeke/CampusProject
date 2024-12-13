@@ -455,6 +455,9 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//span[text()='Recording']")
     public WebElement recordingButton;
 
+    @FindBy(css = "[class='container']")
+    public WebElement container;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {

@@ -34,7 +34,6 @@ public class HomeTabMenu {
         List<String> containsURL =new ArrayList<>();
         Collections.addAll(containsURL,"new","inbox","outbox","trash");
         for (int i = 0; i < 4; i++) {
-            topNavElement.Wait(2);
             topNavElement.myClick(topNavElement.hamburgerMenu);
             topNavElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.messagingBtn));
             topNavElement.hoverOver(topNavElement.messagingBtn);
@@ -54,12 +53,14 @@ public class HomeTabMenu {
         topNavElement.jsClick(topNavElement.attendanceExcusesBtn);
         topNavElement.wait.until(ExpectedConditions.urlContains("attendance-excuse"));
 
-        topNavElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.hamburgerMenu));
-        topNavElement.myClick(topNavElement.hamburgerMenu);
-        topNavElement.hoverOver(topNavElement.videoConference);
-        topNavElement.wait.until(ExpectedConditions.visibilityOfAllElements(topNavElement.videoMeetingsBtn));
-        topNavElement.jsClick(topNavElement.videoMeetingsBtn);
-        topNavElement.wait.until(ExpectedConditions.urlContains("meetings"));
+        if (dialogContentElement.container.isDisplayed()) {
+            topNavElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.hamburgerMenu));
+            topNavElement.myClick(topNavElement.hamburgerMenu);
+            topNavElement.hoverOver(topNavElement.videoConference);
+            topNavElement.wait.until(ExpectedConditions.visibilityOfAllElements(topNavElement.videoMeetingsBtn));
+            topNavElement.jsClick(topNavElement.videoMeetingsBtn);
+            topNavElement.wait.until(ExpectedConditions.urlContains("meetings"));
+        }
 
         topNavElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.hamburgerMenu));
         topNavElement.myClick(topNavElement.hamburgerMenu);

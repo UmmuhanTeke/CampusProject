@@ -17,7 +17,7 @@ public class TopNav extends ReusableMethods {
     @FindBy(xpath = "//span[@class='ng-star-inserted']/button")
     public WebElement hamburgerMenu;
 
-    @FindBy(xpath = "//button[@role='menuitem']")
+    @FindBy(xpath = "//span[text()='Messaging']")
     public WebElement messagingBtn;
 
     @FindBy(xpath = "(//div[@class='cdk-overlay-pane'])[2]//button")
@@ -86,10 +86,10 @@ public class TopNav extends ReusableMethods {
     @FindBy(xpath = "(//span[text()='Attendance'])[3]")
     public WebElement attendanceBtn;
 
-    @FindBy(xpath = "//span[text()='Attendance Excuses (Parents)']")
+    @FindBy(xpath = "//span[contains(text(),'Attendance Excuses')]")
     public WebElement attendanceExcusesBtn;
 
-    @FindBy(xpath = "(//button[@role='menuitem'])[5]")
+    @FindBy(xpath = "//span[contains(text(),'Video ')]")
     public WebElement videoConference;
 
     @FindBy(xpath = "//span[text()='Video Meetings']")
