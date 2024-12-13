@@ -383,6 +383,33 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//*[contains(text(),'not been started')]")
     public WebElement lessonMessage;
 
+    @FindBy(xpath = "(//div[@fxlayoutalign.lt-md='space-between center'])[3]")
+    public WebElement iconsMenu;
+
+    @FindBy(xpath = "(//ms-icon-button[@icon='info'])[3]")
+    public WebElement infoIcon;
+
+    @FindBy(xpath = "//strong[text()='Course:']")
+    public WebElement courseText;
+
+    @FindBy(xpath = "//div[text()='Homework']")
+    public WebElement homeworkText;
+
+    @FindBy(xpath = "//span[text()='Description']")
+    public WebElement descriptionText;
+
+    @FindBy(xpath = "//div[@class='ng-star-inserted']/button")
+    public WebElement backIcon;
+
+    @FindBy(xpath = "//div[@class='assignment ng-star-inserted']")
+    public List<WebElement>assignmentsList;
+
+    @FindBy(xpath = "(//ms-icon-button[@icon='file-import']/button)[3]")
+    public WebElement submitIcon;
+
+    @FindBy(xpath = "//mat-dialog-container[contains(@id,'mat-mdc-dialog')]")
+    public WebElement submitWindow;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
@@ -394,6 +421,7 @@ public class DialogContent extends ReusableMethods {
             case "previousButton": return this.previousButton;
             case "todayButton": return this.todayButton;
             case "nextButton": return this.nextButton;
+            case "backButton" : return this.backIcon;
         }
         return null;
     }
