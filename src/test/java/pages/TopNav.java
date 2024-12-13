@@ -17,7 +17,7 @@ public class TopNav extends ReusableMethods {
     @FindBy(xpath = "//span[@class='ng-star-inserted']/button")
     public WebElement hamburgerMenu;
 
-    @FindBy(xpath = "//span[text()='Messaging']")
+    @FindBy(xpath = "//button[@role='menuitem']")
     public WebElement messagingBtn;
 
     @FindBy(xpath = "(//div[@class='cdk-overlay-pane'])[2]//button")
@@ -83,20 +83,23 @@ public class TopNav extends ReusableMethods {
     @FindBy(xpath = "(//span[text()='Grading'])[1]")
     public WebElement gradingMenu;
 
-    @FindBy(xpath = "//div[@role='menu']/div/button")
-    public WebElement hamburgerMenuButton;
+    @FindBy(xpath = "(//span[text()='Attendance'])[3]")
+    public WebElement attendanceBtn;
 
-    @FindBy(xpath = "(//span[@class='mat-mdc-menu-item-text'])[2]")
-    public WebElement financeMenu;
+    @FindBy(xpath = "//span[text()='Attendance Excuses (Parents)']")
+    public WebElement attendanceExcusesBtn;
 
-    @FindBy(xpath = "//span[text()='Education']")
-    public WebElement educationMenu;
-
-    @FindBy(xpath = "//span[text()='Video Conference']")
+    @FindBy(xpath = "(//button[@role='menuitem'])[5]")
     public WebElement videoConference;
+
+    @FindBy(xpath = "//span[text()='Video Meetings']")
+    public WebElement videoMeetingsBtn;
 
     @FindBy(xpath = "//span[text()='Surveys']")
     public WebElement surveysMenu;
+
+    @FindBy(xpath = "//span[text()='My Surveys']")
+    public WebElement mySurveysBtn;
 
     @FindBy(xpath = "(//span[@class='mat-mdc-button-persistent-ripple mdc-icon-button__ripple'])[1]")
     public WebElement announcementsBtn;
