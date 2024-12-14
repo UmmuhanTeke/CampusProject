@@ -23,6 +23,7 @@ public class ReusableMethods {
     }
 
     public void clickAndEsc(WebElement clickElement,WebElement assertElement){
+        wait.until(ExpectedConditions.visibilityOf(clickElement));
         wait.until(ExpectedConditions.elementToBeClickable(clickElement));
         clickElement.click();
         wait.until(ExpectedConditions.visibilityOfAllElements(assertElement));

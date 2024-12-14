@@ -72,7 +72,7 @@ public class HomeTabMenu {
     @Then("The user verifies items in the upper right corner")
     public void theUserVerifiesItemsInTheUpperRightCorner() {
         topNavElement.clickAndEsc(topNavElement.notificationBtn,topNavElement.dialogTitle);
-        topNavElement.clickAndEsc(topNavElement.messagesBtn,topNavElement.dialogTitle);
+        topNavElement.clickAndEsc(topNavElement.messagesBtn,topNavElement.userMessageList);
 
         topNavElement.myClick(topNavElement.profileBtn);
         topNavElement.myClick(topNavElement.myCertificates);
@@ -82,7 +82,9 @@ public class HomeTabMenu {
         topNavElement.clickAndEsc(topNavElement.myFiles,topNavElement.dialogTitle);
 
         topNavElement.myClick(topNavElement.profileBtn);
-        topNavElement.clickAndEsc(topNavElement.changePassword,topNavElement.dialogTitle);
+        topNavElement.myClick(topNavElement.changePassword);
+        topNavElement.wait.until(ExpectedConditions.visibilityOfAllElements(topNavElement.passwordChangedInput));
+        topNavElement.myClick(topNavElement.closeBtn);
 
         topNavElement.myClick(topNavElement.profileBtn);
         topNavElement.clickAndEsc(topNavElement.profileSettings,topNavElement.dialogTitle);

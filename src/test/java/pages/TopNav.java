@@ -89,6 +89,15 @@ public class TopNav extends ReusableMethods {
     @FindBy(css = "[fxlayoutalign='space-between center']")
     public WebElement dialogTitle;
 
+    @FindBy(xpath = "//user-message-list")
+    public WebElement userMessageList;
+
+    @FindBy(css = "input[formcontrolname='current']")
+    public WebElement passwordChangedInput;
+
+    @FindBy(css = "button[aria-label='Close dialog']")
+    public WebElement closeBtn;
+
     @FindBy(xpath = "//user-message-bell/button")
     public WebElement messagesBtn;
 
