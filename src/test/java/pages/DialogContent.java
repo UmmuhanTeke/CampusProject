@@ -491,6 +491,17 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//ms-dialog/button")
     public WebElement closeBtn;
 
+    @FindBy(xpath = "//button[@aria-label='Close dialog']")
+    public WebElement closeIconBtn;
+
+    @FindBy(xpath = "(//td[@class='column100 column1 details ng-star-inserted']/div)[1]")
+    public WebElement selectsLesson;
+
+    @FindBy(xpath = "//span[text()=' Teacher_1 T1 ']")
+    public WebElement teacherControlText;
+
+    @FindBy(xpath = "//span[text()='Date:']")
+    public WebElement dateControlText;
 
     public WebElement getWebElement(String strElementName) {
 

@@ -49,12 +49,9 @@ public class CalenderPopUps {
             }
 
             dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.teacherText));
-            System.out.println(dialogContentElement.teacherText.isDisplayed());
             dialogContentElement.verifyContainsText(dialogContentElement.teacherText,"Teacher");
 
             dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.courseControlText));
-            System.out.println("2:"+dialogContentElement.courseControlText.getText());
-            System.out.println(dialogContentElement.courseControlText.isDisplayed());
             dialogContentElement.verifyContainsText(dialogContentElement.courseControlText,"11A");
         }
     }
@@ -81,13 +78,26 @@ public class CalenderPopUps {
         GWD.getDriver().switchTo().parentFrame();
         dialogContentElement.myClick(dialogContentElement.closeBtn);
 
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.closeIconBtn));
+        dialogContentElement.myClick(dialogContentElement.closeIconBtn);
     }
 
     @And("The user clicks on the Course Meeting that has not yet started")
     public void theUserClicksOnTheCourseMeetingThatHasNotYetStarted() {
+        dialogContentElement.wait.until(ExpectedConditions.urlToBe(ConfigReader.getProperty("calendarURL")));
+        Assert.assertTrue(GWD.getDriver().getCurrentUrl().equals(ConfigReader.getProperty("calendarURL")));
+
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.selectsLesson));
+        dialogContentElement.myClick(dialogContentElement.selectsLesson);
     }
 
     @Then("The user verifies the Teacher's name, the Date and Time of the lesson, and warning message")
     public void theUserVerifiesTheTeacherSNameTheDateAndTimeOfTheLessonTheWarningMessage() {
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.teacherControlText));
+        dialogContentElement.verifyContainsText(dialogContentElement.teacherControlText,"Teacher");
+        dialogContentElement.verifyContainsText(dialogContentElement.dateControlText,"Date");
+
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.lessonMessage));
+        dialogContentElement.verifyContainsText(dialogContentElement.lessonMessage,"not been started");
     }
 }
