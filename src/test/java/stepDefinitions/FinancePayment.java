@@ -96,6 +96,7 @@ public class FinancePayment {
         dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.paymentStripeBtn));
         dialogContentElement.myClick(dialogContentElement.paymentStripeBtn);
 
+        dialogContentElement.wait.until(ExpectedConditions.elementToBeClickable(dialogContentElement.paymentCompletedText));
         dialogContentElement.verifyContainsText(dialogContentElement.paymentCompletedText, "completed");
         Assert.assertTrue(dialogContentElement.paymentCompletedText.isDisplayed());
     }
