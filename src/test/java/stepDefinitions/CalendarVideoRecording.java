@@ -41,11 +41,11 @@ public class CalendarVideoRecording {
         dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.videoIframe));
         GWD.getDriver().switchTo().frame(0);
         dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.playVideoBtn));
+        Assert.assertTrue(dialogContentElement.playVideoBtn.isDisplayed());
     }
 
     @Then("The user views the Play button in the course video and clicks on it")
     public void theUserViewsThePlayButtonInTheCourseVideoAndClicksOnIt() {
-        Assert.assertTrue(dialogContentElement.playVideoBtn.isDisplayed());
         dialogContentElement.myClick(dialogContentElement.playVideoBtn);
     }
 
