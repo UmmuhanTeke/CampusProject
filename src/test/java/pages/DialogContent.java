@@ -452,10 +452,10 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//*[text()='Information']")
     public WebElement popUpVerify;
 
-    @FindBy(xpath = "//button[contains(@class, 'mat-mdc-menu-item')]")
+    @FindBy(xpath = "//ms-button[@icon='eye']/button")
     public WebElement recordingButton;
 
-    @FindBy(xpath = "//div[@id='root']//div/span")
+    @FindBy(xpath = "div[class='center']")
     public WebElement videoPopUpVerify;
 
     @FindBy(css = "[class='container']")
@@ -463,6 +463,12 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "(//*[@data-icon='star'])[3]")
     public WebElement svg;
+
+    @FindBy(css = "[allowfullscreen='1']")
+    public WebElement videoIframe;
+
+    @FindBy(css = "button[title='Play Video']")
+    public WebElement playVideoBtn;
 
     public WebElement getWebElement(String strElementName) {
 
