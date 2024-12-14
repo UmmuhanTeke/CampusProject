@@ -4,12 +4,15 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import pages.DialogContent;
 import utilities.ConfigReader;
 import utilities.GWD;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CalenderPopUps {
@@ -58,13 +61,25 @@ public class CalenderPopUps {
 
     @Then("The user verifies the all functions of the a opened pop-up window")
     public void theUserVerifiesTheAllFunctionsOfTheAOpenedPopUpWindow(DataTable dtBtn) {
-        List<String> btn = dtBtn.asList();
+        List<String> popupTabMenu=new ArrayList<>();
+        Collections.addAll(popupTabMenu,"Topic","Attachments","Recent Events");
 
+        List<String> btn = dtBtn.asList();
         for (int i = 0; i < btn.size(); i++) {
             dialogContentElement.myClick(dialogContentElement.getWebElement(btn.get(i)));
-            System.out.println("record:"+dialogContentElement.recordingBtn.isDisplayed());
+            Assert.assertTrue(dialogContentElement.recordingBtn.isDisplayed());
+            Assert.assertTrue(dialogContentElement.getWebElement(btn.get(i)).getText().contains(popupTabMenu.get(i)));
         }
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.recordingBtn));
+        dialogContentElement.myClick(dialogContentElement.recordingBtn);
+        dialogContentElement.wait.until(driver -> ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete"));
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.videoIframe));
 
+        GWD.getDriver().switchTo().frame(0);
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.playVideoBtn));
+        Assert.assertTrue(dialogContentElement.playVideoBtn.isDisplayed());
+        GWD.getDriver().switchTo().parentFrame();
+        dialogContentElement.myClick(dialogContentElement.closeBtn);
 
     }
 
