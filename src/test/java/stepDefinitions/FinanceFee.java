@@ -126,7 +126,10 @@ public class FinanceFee {
 
     @Then("The user views the received message in the area")
     public void theUserViewsTheReceivedMessageInTheArea() {
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.newMessageVerify));
         dialogContentElement.myClick(dialogContentElement.viewIconBtn);
+        dialogContentElement.myClick(dialogContentElement.viewIconBtn);
+        System.out.println("4");
         Assert.assertTrue(dialogContentElement.paymentMsgControl.isDisplayed());
         dialogContentElement.verifyContainsText(dialogContentElement.paymentMsgControl, "completed");
     }
