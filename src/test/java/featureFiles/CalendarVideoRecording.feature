@@ -18,4 +18,4 @@ Feature:Calendar Feature Functionality
 
     And   The user accesses the course video
     Then  The user views the Play button in the course video and clicks on it
-    And   The user clicks the Play icon and starts watching the video
+    And   The user starts watching the video
