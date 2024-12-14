@@ -56,23 +56,8 @@ public class TopNav extends ReusableMethods {
     @FindBy(xpath = "(//span[text()=' Student_6 11A'])[1]")
     public WebElement studentBtn;
 
-    @FindBy(xpath = "//div[@class='StripeElement']")
-    public WebElement stripeButton;
-
-    @FindBy(xpath = "(//span[@class='mdc-tab__content'])[2]")
-    public WebElement balanceDetail;
-
-    @FindBy(xpath = "//td[text()=' 235 $ ']")
-    public WebElement balanceDetailTextCtrl;
-
-    @FindBy(xpath = "//student-layout[@class='ng-star-inserted']")
-    public List<WebElement> tabMenu;
-
     @FindBy(xpath = "(//span[contains(text(),'Courses')])[1]")
     public WebElement coursesMenu;
-
-    @FindBy(xpath = "(//ms-layout-menu-button[@caption='NAV.CALENDAR_EVENT.TITLE']//span)[1]")
-    public WebElement calendarMenu;
 
     @FindBy(xpath = "//span[text()='Attendance']")
     public WebElement attendanceMenu;
@@ -101,14 +86,11 @@ public class TopNav extends ReusableMethods {
     @FindBy(xpath = "//span[text()='My Surveys']")
     public WebElement mySurveysBtn;
 
-    @FindBy(xpath = "(//span[@class='mat-mdc-button-persistent-ripple mdc-icon-button__ripple'])[1]")
-    public WebElement announcementsBtn;
+    @FindBy(css = "[fxlayoutalign='space-between center']")
+    public WebElement dialogTitle;
 
-    @FindBy(xpath = "(//span[@class='mat-mdc-button-persistent-ripple mdc-icon-button__ripple'])[2]")
+    @FindBy(xpath = "//user-message-bell/button")
     public WebElement messagesBtn;
-
-    @FindBy(xpath = "//button[@aria-label='Close dialog']")
-    public WebElement announcementCloseBtn;
 
     @FindBy(xpath = "//span[text()='My Certificates']")
     public WebElement myCertificates;
