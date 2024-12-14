@@ -464,7 +464,7 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "(//*[@data-icon='star'])[3]")
     public WebElement svg;
 
-    @FindBy(css = "[allowfullscreen='1']")
+    @FindBy(tagName = "iframe")
     public WebElement videoIframe;
 
     @FindBy(css = "button[title='Play Video']")
@@ -487,6 +487,10 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "//ms-button[@caption='MEETINGS.TITLE.RECORDING']/button")
     public WebElement recordingBtn;
+
+    @FindBy(xpath = "//ms-dialog/button")
+    public WebElement closeBtn;
+
 
     public WebElement getWebElement(String strElementName) {
 
