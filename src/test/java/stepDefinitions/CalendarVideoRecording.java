@@ -5,6 +5,7 @@ import io.cucumber.java.en.*;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.DialogContent;
+import utilities.GWD;
 
 import java.util.List;
 import java.util.Random;
@@ -20,6 +21,7 @@ public class CalendarVideoRecording {
         dialogContentElement.myClick(endedLessons.get(randomIndex));
         dialogContentElement.verifyContainsText(dialogContentElement.popUpVerify, "Information");
         System.out.println(dialogContentElement.popUpVerify.getText());
+        dialogContentElement.myClick(endedLessons.get(randomIndex));
     }
 
     @Then("The user views the Recording button to access the course recording and clicks on it")
@@ -34,15 +36,20 @@ public class CalendarVideoRecording {
 
     @And("The user accesses the course video")
     public void theUserAccessesTheCourseVideo() {
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.videoPopUpVerify));
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.videoIframe));
+        GWD.getDriver().switchTo().frame(dialogContentElement.videoIframe);
         dialogContentElement.verifyContainsText(dialogContentElement.videoPopUpVerify, "11A");
+        dialogContentElement.Wait(5);
     }
 
     @Then("The user views the Play button in the course video and clicks on it")
     public void theUserViewsThePlayButtonInTheCourseVideoAndClicksOnIt() {
+        dialogContentElement.myClick(dialogContentElement.playVideoBtn);
     }
 
     @And("The user clicks the Play icon and starts watching the video")
     public void theUserClicksThePlayIconAndStartsWatchingTheVideo() {
+        dialogContentElement.wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(dialogContentElement.videoIframe));
+        GWD.getDriver().switchTo().parentFrame();
     }
 }
