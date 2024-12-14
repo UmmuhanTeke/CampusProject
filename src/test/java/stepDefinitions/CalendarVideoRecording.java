@@ -2,8 +2,10 @@ package stepDefinitions;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 import pages.DialogContent;
 import utilities.GWD;
 
@@ -20,7 +22,6 @@ public class CalendarVideoRecording {
         int randomIndex = random.nextInt(endedLessons.size());
         dialogContentElement.myClick(endedLessons.get(randomIndex));
         dialogContentElement.verifyContainsText(dialogContentElement.popUpVerify, "Information");
-        System.out.println(dialogContentElement.popUpVerify.getText());
         dialogContentElement.myClick(endedLessons.get(randomIndex));
     }
 
@@ -36,20 +37,22 @@ public class CalendarVideoRecording {
 
     @And("The user accesses the course video")
     public void theUserAccessesTheCourseVideo() {
-        dialogContentElement.wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(dialogContentElement.videoIframe));
-        GWD.getDriver().switchTo().frame(dialogContentElement.videoIframe);
-        dialogContentElement.verifyContainsText(dialogContentElement.videoPopUpVerify, "11A");
-        dialogContentElement.Wait(5);
+        dialogContentElement.wait.until(driver -> ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete"));
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.videoIframe));
+        GWD.getDriver().switchTo().frame(0);
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.playVideoBtn));
+        Assert.assertTrue(dialogContentElement.playVideoBtn.isDisplayed());
     }
 
     @Then("The user views the Play button in the course video and clicks on it")
     public void theUserViewsThePlayButtonInTheCourseVideoAndClicksOnIt() {
+        Assert.assertTrue(dialogContentElement.playVideoBtn.isDisplayed());
         dialogContentElement.myClick(dialogContentElement.playVideoBtn);
     }
 
-    @And("The user clicks the Play icon and starts watching the video")
+    @And("The user starts watching the video")
     public void theUserClicksThePlayIconAndStartsWatchingTheVideo() {
-        dialogContentElement.Wait(3);
+        dialogContentElement.Wait(10); //The time allocated to watch the video
         GWD.getDriver().switchTo().parentFrame();
     }
 }
