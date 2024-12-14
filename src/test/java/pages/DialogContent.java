@@ -455,8 +455,8 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//ms-button[@icon='eye']/button")
     public WebElement recordingButton;
 
-    @FindBy(xpath = "div[class='center']")
-    public WebElement videoPopUpVerify;
+    @FindBy(xpath = "//user-message-list")
+    public WebElement newMessageVerify;
 
     @FindBy(css = "[class='container']")
     public WebElement container;
@@ -505,9 +505,6 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "//span[text()='Search']")
     public WebElement searchButton;
-
-    @FindBy(xpath = "//div[@class='assignment ng-star-inserted']")
-    public List<WebElement> lessonsVerify;
 
     public WebElement getWebElement(String strElementName) {
 
