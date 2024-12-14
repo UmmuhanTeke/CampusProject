@@ -48,22 +48,21 @@ public class AssignmentsIconControl {
     }
 
     @And("The user goes back the Assignment list")
-    public void theUserGoesBackTheAssignmentList() {
+    public void theUserGoesBackTheAssignmentList(DataTable dtBtn) {
+        List<String> btn = dtBtn.asList();
+        for (int i = 0; i < btn.size(); i++) {
+            dialogContentElement.myClick(dialogContentElement.getWebElement(btn.get(i)));
+        }
+    }
+
+    @And("The user clicks on another place without an icon from the assignment list")
+    public void theUserClicksOnAnotherPlaceWithoutAnIconFromTheAssignmentList() {
         dialogContentElement.wait.until(ExpectedConditions.urlToBe(ConfigReader.getProperty("assignmentURL")));
         Assert.assertTrue(GWD.getDriver().getCurrentUrl().equals(ConfigReader.getProperty("assignmentURL")));
 
         dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.assignmentsList));
         int randomIndex = random.nextInt(dialogContentElement.assignmentsList.size());
         dialogContentElement.myClick(dialogContentElement.assignmentsList.get(randomIndex));
-    }
-
-    @And("The user clicks on another place without an icon from the assignment list")
-    public void theUserClicksOnAnotherPlaceWithoutAnIconFromTheAssignmentList(DataTable dtBtn) {
-        List<String> btn = dtBtn.asList();
-
-        for (int i = 0; i < btn.size(); i++) {
-            dialogContentElement.myClick(dialogContentElement.getWebElement(btn.get(i)));
-        }
     }
 
     @Then("The user clicks on the Submit icon and verifies the submission window on the page")
@@ -78,20 +77,16 @@ public class AssignmentsIconControl {
 
     @Then("The user clicks on the Mark it icon and verifies marked as a favorite")
     public void theUserClicksOnTheMarkItIconAndVerifiesMarkedAsAFavorite() {
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.markItIcon));
-        boolean found = false;
-        if (dialogContentElement.svg.getAttribute("data-prefix").contains("fal")) {
-            found = true;
-        }
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.markItIcon));
+        boolean found = dialogContentElement.svg.getAttribute("data-prefix").contains("fal");
         Assert.assertTrue(found);
 
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.markItIcon));
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.markItIcon));
         dialogContentElement.myClick(dialogContentElement.markItIcon);
 
-        if (dialogContentElement.svg.getAttribute("data-prefix").contains("fas")) {
-            found = true;
-        }
+        found=dialogContentElement.svg.getAttribute("data-prefix").contains("fas");
         Assert.assertTrue(found);
+
         dialogContentElement.myClick(dialogContentElement.markItIcon);
     }
 }
