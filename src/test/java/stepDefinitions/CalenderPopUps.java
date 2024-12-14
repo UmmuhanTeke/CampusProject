@@ -5,8 +5,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class CalenderPopUps {
-    @When("The user views Course Status \\(P\\/S\\/E), Course Name, and Teacher's Name of Weekly Course Plan page")
-    public void theUserViewsCourseStatusPSECourseNameAndTeacherSNameOfWeeklyCoursePlanPage() {
+
+    @When("The user views Course Status \\(P,S,E,C) Course Name, and Teacher's Name of Weekly Course Plan page")
+    public void theUserViewsCourseStatusPSECCourseNameAndTeacherSNameOfWeeklyCoursePlanPage() {
     }
 
     @Then("The user verifies the all functions of the a opened pop-up window")

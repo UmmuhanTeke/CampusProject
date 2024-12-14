@@ -9,7 +9,7 @@ Feature: Calendar PopUps Functionality
     Given The user clicks on the Calendar button on the top navigation bar
       | calendarButton |
 
-    When The user views Course Status (P/S/E), Course Name, and Teacher's Name of Weekly Course Plan page
+    When The user views Course Status (P,S,E,C) Course Name, and Teacher's Name of Weekly Course Plan page
     And  The user clicks on a completed (E) course
     Then The user verifies the all functions of the a opened pop-up window
       | Information  |
