@@ -503,6 +503,12 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//span[text()='Date:']")
     public WebElement dateControlText;
 
+    @FindBy(xpath = "//span[text()='Search']")
+    public WebElement searchButton;
+
+    @FindBy(xpath = "//div[@class='assignment ng-star-inserted']")
+    public List<WebElement> lessonsVerify;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
