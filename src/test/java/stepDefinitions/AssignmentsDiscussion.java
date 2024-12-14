@@ -5,7 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class AssignmentsDiscussion {
-    @When("The user clicks on the Search button by selecting status Results Published")
+    @When("The user clicks on the Search button by selecting status Results Published and semester All options")
     public void theUserClicksOnTheSearchButtonBySelectingStatusResultsPublished() {
     }
 
