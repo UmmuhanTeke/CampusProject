@@ -36,7 +36,7 @@ public class CalendarVideoRecording {
 
     @And("The user accesses the course video")
     public void theUserAccessesTheCourseVideo() {
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.videoIframe));
+        dialogContentElement.wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(dialogContentElement.videoIframe));
         GWD.getDriver().switchTo().frame(dialogContentElement.videoIframe);
         dialogContentElement.verifyContainsText(dialogContentElement.videoPopUpVerify, "11A");
         dialogContentElement.Wait(5);
@@ -49,7 +49,7 @@ public class CalendarVideoRecording {
 
     @And("The user clicks the Play icon and starts watching the video")
     public void theUserClicksThePlayIconAndStartsWatchingTheVideo() {
-        dialogContentElement.wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(dialogContentElement.videoIframe));
+        dialogContentElement.Wait(3);
         GWD.getDriver().switchTo().parentFrame();
     }
 }
