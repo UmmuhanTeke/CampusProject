@@ -63,7 +63,7 @@ public class HomeTabMenu {
         topNavElement.wait.until(ExpectedConditions.urlContains("meetings"));
 
         topNavElement.myClick(topNavElement.hamburgerMenu);
-        topNavElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.surveysMenu));
+        topNavElement.wait.until(ExpectedConditions.visibilityOfAllElements(topNavElement.surveysMenu));
         topNavElement.hoverOver(topNavElement.surveysMenu);
         topNavElement.jsClick(topNavElement.mySurveysBtn);
         topNavElement.wait.until(ExpectedConditions.urlContains("surveys"));
