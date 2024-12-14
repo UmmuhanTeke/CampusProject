@@ -470,6 +470,24 @@ public class DialogContent extends ReusableMethods {
     @FindBy(css = "button[title='Play Video']")
     public WebElement playVideoBtn;
 
+    @FindBy(xpath = "//*[contains(text(),'Teacher')]")
+    public WebElement teacherText;
+
+    @FindBy(xpath = "//span[contains(text(),'11A-')]")
+    public WebElement courseControlText;
+
+    @FindBy(xpath = "(//div[@role='tab'])[4]")
+    public WebElement topicBtn;
+
+    @FindBy(xpath = "(//div[@role='tab'])[5]")
+    public WebElement attachmentsBtn;
+
+    @FindBy(xpath = "(//div[@role='tab'])[6]")
+    public WebElement recentEventsBtn;
+
+    @FindBy(xpath = "//ms-button[@caption='MEETINGS.TITLE.RECORDING']/button")
+    public WebElement recordingBtn;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
@@ -483,6 +501,9 @@ public class DialogContent extends ReusableMethods {
             case "nextButton": return this.nextButton;
             case "backButton" : return this.backIcon;
             case "recordingButton": return this.recordingButton;
+            case "topic": return this.topicBtn;
+            case "attachments": return this.attachmentsBtn;
+            case "recentEvents": return this.recentEventsBtn;
         }
         return null;
     }
