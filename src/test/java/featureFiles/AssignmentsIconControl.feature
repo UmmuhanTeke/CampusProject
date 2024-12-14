@@ -7,7 +7,7 @@ Feature: Assignment Icons Control Functionality
     And   The user clicks on the Assignment button
     When  The user selects a assignment is selected from the list and views the icons next to the assignment
 
-  Scenario: Information Icon Functionality
+  Scenario:Icons Control Functionality
     When The user clicks on the Information icon
     Then The user verifies the assignment details on the page
     And  The user goes back the Assignment list
