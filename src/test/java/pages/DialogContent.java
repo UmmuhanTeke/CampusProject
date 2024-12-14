@@ -446,13 +446,13 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "(//ms-icon-button[@icon='star']/button)[3]")
     public WebElement markItIcon;
 
-    @FindBy(xpath = "//*[text()='E']")
+    @FindBy(xpath = "//tbody//span[text() = 'E']/parent::*")
     public List<WebElement> endedLessonBtn;
 
-    @FindBy(xpath = "//span[contains(text(), 'Course Meeting')]")
+    @FindBy(xpath = "//*[text()='Information']")
     public WebElement popUpVerify;
 
-    @FindBy(xpath = "//span[text()='Recording']")
+    @FindBy(xpath = "//button[contains(@class, 'mat-mdc-menu-item')]")
     public WebElement recordingButton;
 
     @FindBy(xpath = "//div[@id='root']//div/span")
