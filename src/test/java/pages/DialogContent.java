@@ -437,7 +437,7 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//div[@class='ng-star-inserted']/button")
     public WebElement studentFeesBtn;
 
-    @FindBy(xpath = "//ms-standard-button[@icon='users']")
+    @FindBy(xpath = "//ms-standard-button[@icon='users']/button")
     public WebElement contactIcon;
 
     @FindBy(xpath = "(//ms-icon-button[@icon='comments-alt']/button)[3]")
@@ -544,6 +544,10 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "//ms-icon-button[@icon='comments-alt']/button")
     public List<WebElement> discussionBtn;
+
+    @FindBy(xpath = "//span[text()='campus2photo.png']")
+    public WebElement discussionFileText;
+
 
     public WebElement getWebElement(String strElementName) {
 
