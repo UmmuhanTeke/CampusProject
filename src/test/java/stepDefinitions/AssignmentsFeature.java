@@ -1,14 +1,12 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.*;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import pages.DialogContent;
 import utilities.ConfigReader;
 import utilities.GWD;
 
-import java.util.List;
 import java.util.Random;
 
 public class AssignmentsFeature {
@@ -31,33 +29,54 @@ public class AssignmentsFeature {
 
     @Then("The user views the list of all assigned tasks")
     public void theUserViewsTheListOfAllAssignedTasks() {
-//        List<WebElement> assignmentLessons = dialogContentElement.assignmentsList;
-//
-//        for (WebElement lessons : assignmentLessons) {
-//            dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(lessons));
-//            Assert.assertTrue(lessons.isDisplayed());
-//            System.out.println(lessons);
-//        }
+        for (int i = 0; i < dialogContentElement.assignmentsList.size(); i++) {
+            dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.assignmentsList));
+            dialogContentElement.scrollToElement(dialogContentElement.assignmentsList.get(i));
+            Assert.assertTrue(dialogContentElement.assignmentsList.get(i).isDisplayed());
+        }
     }
 
     @And("The user filters the search \\(Course,Status,Semester)")
     public void theUserFiltersTheSearchCourseStatusSemester() {
-        dialogContentElement.myClick(dialogContentElement.showAllBtn);
-        dialogContentElement.Wait(2);
-        List<WebElement> showAllOption = dialogContentElement.showAllOptions;
-        int randomIndex = random.nextInt(showAllOption.size());
-        dialogContentElement.myClick(showAllOption.get(randomIndex));
+        dialogContentElement.scrollToElement(dialogContentElement.showAllBtn);
+        dialogContentElement.jsClick(dialogContentElement.showAllBtn);
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.showAllOptions));
+        int randomIndex = random.nextInt(dialogContentElement.showAllOptions.size());
+        dialogContentElement.clickAndEsc(dialogContentElement.showAllOptions.get(randomIndex),
+                dialogContentElement.showAllOptions.get(randomIndex));
 
-        dialogContentElement.myClick(dialogContentElement.statusMenu);
-        dialogContentElement.myClick(dialogContentElement.resultsPublishedBtn);
-        dialogContentElement.myClick(dialogContentElement.allBtn);
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.statusMenu));
+        dialogContentElement.jsClick(dialogContentElement.statusMenu);
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.resultsPublishedBtn));
+        dialogContentElement.clickAndEsc(dialogContentElement.resultsPublishedBtn,
+                dialogContentElement.resultsPublishedBtn);
+
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.semesterMenu));
+        dialogContentElement.jsClick(dialogContentElement.semesterMenu);
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.allBtn));
+        dialogContentElement.clickAndEsc(dialogContentElement.allBtn, dialogContentElement.allBtn);
     }
 
     @And("The user accesses a dropdown menu to sort search results on the Assignments page")
     public void theUserAccessesADropdownMenuToSortSearchResultsOnTheAssignmentsPage() {
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.defaultViewBtn));
+        dialogContentElement.jsClick(dialogContentElement.defaultViewBtn);
+        for (int i = 0; i < dialogContentElement.defaultDropDown.size(); i++) {
+            dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.defaultDropDown.get(i)));
+            Assert.assertTrue(dialogContentElement.defaultDropDown.get(i).isDisplayed());
+        }
     }
 
     @And("The user can sort results by course, type, date, and table from the dropdown menu")
     public void theUserCanSortResultsByCourseTypeDateAndTableFromTheDropdownMenu() {
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.defaultDropDown));
+        int randomIndex = random.nextInt(dialogContentElement.defaultDropDown.size());
+        dialogContentElement.jsClick(dialogContentElement.defaultDropDown.get(randomIndex));
+
+        for (int i = 0; i < dialogContentElement.assignmentsList.size(); i++) {
+            dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.assignmentsList));
+            dialogContentElement.scrollToElement(dialogContentElement.assignmentsList.get(i));
+            Assert.assertTrue(dialogContentElement.assignmentsList.get(i).isDisplayed());
+        }
     }
 }
