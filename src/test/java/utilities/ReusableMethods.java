@@ -25,7 +25,7 @@ public class ReusableMethods {
     public void clickAndEsc(WebElement clickElement,WebElement assertElement){
         wait.until(ExpectedConditions.visibilityOf(clickElement));
         wait.until(ExpectedConditions.elementToBeClickable(clickElement));
-        clickElement.click();
+        jsClick(clickElement);
         wait.until(ExpectedConditions.visibilityOfAllElements(assertElement));
         Assert.assertTrue(assertElement.isDisplayed());
         new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
