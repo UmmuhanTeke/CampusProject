@@ -9,13 +9,13 @@ The Environment Used in the Project: [test.mersys.io](https://test.mersys.io/)
 
 ## Table of Contents
 
+- [Contributors](#contributors)
 - [Project Overview](#project-overview)
 - [Features Tested](#features-tested)
 - [Technologies and Tools Used](#technologies-and-tools-used)
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
-- [Contributors](#contributors)
 - [Team Members](#team-members)
 - [Contributing](#contributing)
 - [Pull Request Rules](#pull-request-rules)
