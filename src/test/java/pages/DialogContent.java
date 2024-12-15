@@ -503,8 +503,8 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//span[text()='Date:']")
     public WebElement dateControlText;
 
-    @FindBy(xpath = "//span[text()='Search']")
-    public WebElement searchButton;
+    @FindBy(css = "mat-select[id='mat-select-0']")
+    public WebElement showAllBtn;
 
     @FindBy(xpath = "(//mat-select[@role='combobox'])[2]")
     public WebElement statusMenu;
@@ -515,7 +515,7 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "(//div[@role='listbox']/mat-option)[2]")
     public WebElement resultsPublishedBtn;
 
-    @FindBy(xpath = "//mat-select[@id='mat-select-2']/div")
+    @FindBy(css = "mat-select[id='mat-select-2']")
     public WebElement semesterMenu;
 
     @FindBy(xpath = "//mat-option[@value='all']")
@@ -539,9 +539,8 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//div[contains(@class,'comment-time secondary-text ng-tns')]")
     public WebElement verifyDateAndTime;
 
-    @FindBy(xpath = "//ms-icon-button[@icon='comments-alt']/button")
-    public List<WebElement> discussionBtn;
-
+    @FindBy(xpath = "//*[@role='listbox']//mat-option")
+    public List<WebElement> showAllOptions;
 
     public WebElement getWebElement(String strElementName) {
 
