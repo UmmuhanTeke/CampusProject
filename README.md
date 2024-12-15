@@ -28,7 +28,7 @@ The Environment Used in the Project: [test.mersys.io](https://test.mersys.io/)
 | [05-06-09-14-20-24] | [Merve Kaya](https://github.com/kayyamervee) |
 | [02-08-10-16-23-25] | [Ümmühan Teke](https://github.com/UmmuhanTeke) |
 | [01-18] | [Mert Bilecen](https://github.com/MertBilecen) |
-| [11] | [Söngül Çam](https://github.com/songul-cam) |
+| [11] | [Songül Çam](https://github.com/songul-cam) |
 
 
 
