@@ -515,7 +515,7 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "(//div[@role='listbox']/mat-option)[2]")
     public WebElement resultsPublishedBtn;
 
-    @FindBy(css = "mat-select[id='mat-select-2']")
+    @FindBy(xpath = "//mat-select[@id='mat-select-2']/div")
     public WebElement semesterMenu;
 
     @FindBy(xpath = "//mat-option[@value='all']")
@@ -538,6 +538,9 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "//div[contains(@class,'comment-time secondary-text ng-tns')]")
     public WebElement verifyDateAndTime;
+
+    @FindBy(xpath = "//ms-icon-button[@icon='comments-alt']/button")
+    public List<WebElement> discussionBtn;
 
 
     public WebElement getWebElement(String strElementName) {

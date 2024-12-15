@@ -28,20 +28,28 @@ public class AssignmentsDiscussion {
         dialogContentElement.myClick(dialogContentElement.resultsPublishedBtn);
 
         dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.semesterMenu));
-        dialogContentElement.myClick(dialogContentElement.semesterMenu);
+        dialogContentElement.jsClick(dialogContentElement.semesterMenu);
         dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.allBtn));
         dialogContentElement.myClick(dialogContentElement.allBtn);
 
         dialogContentElement.myClick(dialogContentElement.searchBtn);
-
     }
 
     @And("The user clicks on the Discussion icon to start a negotiation and verifies the Discussion window")
     public void theUserClicksOnTheDiscussionIconToStartANegotiationAndVerifiesTheDiscussionWindow() {
+        int randomIndex= random.nextInt(dialogContentElement.discussionBtn.size());
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.discussionBtn));
+        dialogContentElement.jsClick(dialogContentElement.discussionBtn.get(randomIndex));
+        Assert.assertTrue(dialogContentElement.contactIcon.isDisplayed());
     }
 
     @When("The user clicks on the Contacts icon then selects randomly contacts")
     public void theUserClicksOnTheContactsIconThenSelectsRandomlyContacts() {
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.contactIcon));
+        dialogContentElement.jsClick(dialogContentElement.contactIcon);
+        int randomIndex= random.nextInt(dialogContentElement.contactsList.size());
+        dialogContentElement.scrollToElement(dialogContentElement.contactsList.get(randomIndex));
+        dialogContentElement.myClick(dialogContentElement.contactsList.get(randomIndex));
     }
 
     @And("The user clicks Attach Files icon to upload file and types text in Discussion chat")
