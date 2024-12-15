@@ -503,7 +503,7 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//span[text()='Date:']")
     public WebElement dateControlText;
 
-    @FindBy(css = "mat-select[id='mat-select-0']")
+    @FindBy(xpath = "(//mat-select[contains(@id,'mat-select-')])[1]")
     public WebElement showAllBtn;
 
     @FindBy(xpath = "(//mat-select[@role='combobox'])[2]")
@@ -515,7 +515,7 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "(//div[@role='listbox']/mat-option)[2]")
     public WebElement resultsPublishedBtn;
 
-    @FindBy(css = "mat-select[id='mat-select-2']")
+    @FindBy(xpath = "(//mat-select[contains(@id,'mat-select-')])[3]")
     public WebElement semesterMenu;
 
     @FindBy(xpath = "//mat-option[@value='all']")
@@ -547,6 +547,12 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "//span[text()='campus2photo.png']")
     public WebElement discussionFileText;
+
+    @FindBy(xpath = "//button//div[@class='selected-flag']")
+    public WebElement defaultViewBtn;
+
+    @FindBy(xpath = "//div[@class='cdk-overlay-pane']//button")
+    public List<WebElement> defaultDropDown;
 
     public WebElement getWebElement(String strElementName) {
 
