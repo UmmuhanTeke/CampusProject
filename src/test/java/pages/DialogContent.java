@@ -548,7 +548,6 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//span[text()='campus2photo.png']")
     public WebElement discussionFileText;
 
-
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {

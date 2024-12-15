@@ -10,6 +10,8 @@ import pages.DialogContent;
 import utilities.ConfigReader;
 import utilities.GWD;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Random;
 
 public class AssignmentsDiscussion {
@@ -75,5 +77,10 @@ public class AssignmentsDiscussion {
 
     @Then("The user verifies the text of the Sent message and Date and Time")
     public void theUserVerifiesTheTextOfTheSentMessageAndDateAndTime() {
+        LocalDateTime localDateTime=LocalDateTime.now();
+        DateTimeFormatter formater=DateTimeFormatter.ofPattern("dd.yyyy");
+        dialogContentElement.wait.until(ExpectedConditions.visibilityOfAllElements(dialogContentElement.verifyDateAndTime));
+        String verifyDateText=dialogContentElement.verifyDateAndTime.getText().replaceAll(", ",".");
+        Assert.assertTrue(verifyDateText.contains(localDateTime.format(formater)));
     }
 }
