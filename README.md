@@ -30,7 +30,6 @@ Campus is an educational platform that provides a range of features for students
 The following user stories are tested in this project:
 
 1. **Login Feature (US-001):**  Users can log into the system as students via "test.mersys.io" to access classes, learning materials, and communicate with peers and teachers. Includes validation for correct/incorrect login attempts.
-(![US-001](https://drive.google.com/file/d/18kqdHNdp4KOytK4gqzy9b2TKwacqmbsp/view?usp=sharing).)
 
 2. **Home Feature (US-002):**  Clicking on the logo directs users to the course's home page for quick access to course information. Requires user authentication.
 
