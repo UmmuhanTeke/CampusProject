@@ -21,6 +21,26 @@ The Environment Used in the Project: [test.mersys.io](https://test.mersys.io/)
 - [Pull Request Rules](#pull-request-rules)
 - [License](#license)
 
+  ## Contributors
+| User Stories                                     | Contributor                  |
+|------------------------------------------------|------------------------------|
+| [03-04-07-13-15-17-21] | [Sefa Kahraman](https://github.com/SefaKahramann) |
+| [05-06-09-14-20-24] | [Merve Kaya](https://github.com/kayyamervee) |
+| [02-08-10-16-23-25] | [Ümmühan Teke](https://github.com/UmmuhanTeke) |
+| [01-18] | [Mert Bilecen](https://github.com/MertBilecen) |
+| [11] | [Söngül Çam](https://github.com/songul-cam) |
+
+
+
+## Team Members
+| Name                    | Role            | GitHub                                           | 
+|-------------------------|-----------------|--------------------------------------------------|
+| Merve KAYA              | QA Automation Engineer                  | [Merve Kaya](https://github.com/kayyamervee)   | 
+| Ümmühan TEKE            | QA Automation Engineer                  | [Ümmühan Teke](https://github.com/UmmuhanTeke) | 
+| Songül ÇAM              | QA Automation Engineer                  | [Songül Çam](https://github.com/songul-cam) | 
+| Mert BİLECEN            | QA Automation Engineer                  | [Mert Bilecen](https://github.com/MertBilecen) |
+| Sefa KAHRAMAN           | Project Lead & QA Automation Engineer   | [Sefa Kahraman](https://github.com/SefaKahramann) |
+
 ## Project Overview
 
 Campus is an educational platform that provides a range of features for students to manage their academic activities. This testing project is focused on ensuring the reliability and functionality of the platform's features, including user registration, course management, assignment submissions, and more.
@@ -202,26 +222,6 @@ C:.
         ├───stepDefinitions
         └───utilities
 ```
-
-## Contributors
-| User Stories                                     | Contributor                  |
-|------------------------------------------------|------------------------------|
-| [03-04-07-13-15-17-21] | [Sefa Kahraman](https://github.com/SefaKahramann) |
-| [05-06-09-14-20-24] | [Merve Kaya](https://github.com/kayyamervee) |
-| [02-08-10-16-23-25] | [Ümmühan Teke](https://github.com/UmmuhanTeke) |
-| [01-18] | [Mert Bilecen](https://github.com/MertBilecen) |
-| [11] | [Söngül Çam](https://github.com/songul-cam) |
-
-
-
-## Team Members
-| Name                    | Role            | GitHub                                           | 
-|-------------------------|-----------------|--------------------------------------------------|
-| Merve KAYA              | QA Automation Engineer                  | [Merve Kaya](https://github.com/kayyamervee)   | 
-| Ümmühan TEKE            | QA Automation Engineer                  | [Ümmühan Teke](https://github.com/UmmuhanTeke) | 
-| Songül ÇAM              | QA Automation Engineer                  | [Songül Çam](https://github.com/songul-cam) | 
-| Mert BİLECEN            | QA Automation Engineer                  | [Mert Bilecen](https://github.com/MertBilecen) |
-| Sefa KAHRAMAN           | Project Lead & QA Automation Engineer   | [Sefa Kahraman](https://github.com/SefaKahramann) |
 
 ## Contributing
 Contributions are welcome! If you find any issues or want to add more tests, feel free to open a pull request.
