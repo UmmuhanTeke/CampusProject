@@ -506,6 +506,40 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//span[text()='Search']")
     public WebElement searchButton;
 
+    @FindBy(xpath = "(//mat-select[@role='combobox'])[2]")
+    public WebElement statusMenu;
+
+    @FindBy(xpath = "(//div[@role='listbox']/mat-option)[1]")
+    public WebElement publishedBtn;
+
+    @FindBy(xpath = "(//div[@role='listbox']/mat-option)[2]")
+    public WebElement resultsPublishedBtn;
+
+    @FindBy(css = "mat-select[id='mat-select-2']")
+    public WebElement semesterMenu;
+
+    @FindBy(xpath = "//mat-option[@value='all']")
+    public WebElement allBtn;
+
+    @FindBy(xpath = "//*[text()='Search']")
+    public WebElement searchBtn;
+
+    @FindBy(xpath = "//mat-list-option[@role='option']")
+    public List<WebElement> contactsList;
+
+    @FindBy(css = "textarea[formcontrolname='commentText']")
+    public WebElement textBoxChat;
+
+    @FindBy(xpath = "(//ms-icon-button[@icon='paperclip'])[2]/button")
+    public WebElement attachIconChat;
+
+    @FindBy(xpath = "//ms-icon-button[@icon='paper-plane']/button")
+    public WebElement sendIcon;
+
+    @FindBy(xpath = "//div[contains(@class,'comment-time secondary-text ng-tns')]")
+    public WebElement verifyDateAndTime;
+
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
