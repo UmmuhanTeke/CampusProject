@@ -14,11 +14,6 @@ public class MessagingSubMenu {
      DialogContent dialogContentElement=new DialogContent();
      TopNav topNavElement=new TopNav();
 
-    @Given("The user clicks on the hamburger menu")
-    public void theUserClicksOnTheHamburgerMenu() {
-        topNavElement.myClick(topNavElement.hamburgerMenu);
-    }
-
     @When("The user hovers over the messaging link")
     public void theUserHoversOverTheMessagingLink() {
         topNavElement.hoverOver(topNavElement.messagingBtn);

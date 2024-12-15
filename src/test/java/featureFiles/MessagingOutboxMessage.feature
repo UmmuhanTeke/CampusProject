@@ -6,7 +6,7 @@ Feature: Messaging Outbox Message Functionality
     Then The user verifies login successfully
 
   Scenario: Outbox Message Functionality
-    Given The user clicks on the hamburger menu
+    Given The user clicks on the Hamburger menu
     When  The user hovers over the messaging link
     Then  The user clicks outbox message and verifies the outbox message list
       | outboxMessage |
