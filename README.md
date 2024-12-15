@@ -3,7 +3,7 @@
 **Two Week Sprint**
 
 This repository contains the automated testing suite for the CampusMersys project, a web-based platform designed for educational institutions.
-The tests cover various features available on the [Campus](https://test.mersys.io/) (test.mersys.io) website.
+The tests cover various features available on the [Campus](https://test.mersys.io/) website.
 
 The Environment Used in the Project: [test.mersys.io](https://test.mersys.io/)
 
