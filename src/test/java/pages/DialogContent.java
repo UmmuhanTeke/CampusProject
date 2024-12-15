@@ -425,10 +425,10 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "(//div[contains(@class, 'mat-mdc-select-value')])[3]")
     public WebElement semesterBtn;
 
-    @FindBy(xpath = "(//span[@class='mdc-list-itemprimary-text'])[1]")
+    @FindBy(xpath = "//mat-option[@id='mat-option-11']")
     public WebElement semesterAllBtn;
 
-    @FindBy(xpath = "//div[@class='mat-mdc-tooltip-surface mdc-tooltipsurface']")
+    @FindBy(xpath = "//div[@class='mat-mdc-tooltip-surface mdc-tooltip__surface']")
     public WebElement assingmentsCount;
 
     @FindBy(xpath = "//span[text()=' Published ']")
