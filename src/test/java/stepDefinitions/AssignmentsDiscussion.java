@@ -50,6 +50,7 @@ public class AssignmentsDiscussion {
         int randomIndex= random.nextInt(dialogContentElement.contactsList.size());
         dialogContentElement.scrollToElement(dialogContentElement.contactsList.get(randomIndex));
         dialogContentElement.myClick(dialogContentElement.contactsList.get(randomIndex));
+
     }
 
     @And("The user clicks Attach Files icon to upload file and types text in Discussion chat")

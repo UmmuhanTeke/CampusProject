@@ -542,6 +542,9 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//*[@role='listbox']//mat-option")
     public List<WebElement> showAllOptions;
 
+    @FindBy(xpath = "//ms-icon-button[@icon='comments-alt']/button")
+    public List<WebElement> discussionBtn;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {
