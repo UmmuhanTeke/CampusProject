@@ -6,6 +6,6 @@ Feature:Messaging Submenu Functionality
     Then The user verifies login successfully
 
   Scenario:Messaging Submenu Functionality
-    Given The user clicks on the hamburger menu
+    Given The user clicks on the Hamburger menu
     When  The user hovers over the messaging link
     Then  The user clicks on the buttons and verifies

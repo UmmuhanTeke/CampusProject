@@ -7,7 +7,7 @@ Feature:Messaging Trash Functionality
 
   Scenario:Managing deleted messages
 
-    Given The user clicks on the hamburger menu
+    Given The user clicks on the Hamburger menu
     When  The user hovers over the messaging link
     And   The user clicks on the trash button
     Then  The user should display Delete and Restore options for each message

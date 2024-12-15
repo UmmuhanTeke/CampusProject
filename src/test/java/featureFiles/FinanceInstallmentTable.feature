@@ -6,7 +6,7 @@ Feature: Finance Installment Table Functionality
     Then The user verifies login successfully
 
   Scenario: Installment Table Functionality
-    Given The user clicks on the hamburger menu
+    Given The user clicks on the Hamburger menu
     When  The user hovers over the messaging link
     And   The user navigates to Finance and then to My Finance
     When  The user clicks on the View icon to view the Installment Table

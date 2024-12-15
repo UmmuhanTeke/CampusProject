@@ -6,7 +6,7 @@ Feature: Messaging Send Message Functionality
     Then The user verifies login successfully
 
   Scenario: Send Message Functionality
-    Given The user clicks on the hamburger menu
+    Given The user clicks on the Hamburger menu
     When  The user hovers over the messaging link
     And   The user clicks send message
       | sendMessage |
@@ -17,7 +17,7 @@ Feature: Messaging Send Message Functionality
     And  The user selects the message types and types the subject for it
     And  The user types the message text and uploads the file by clicking on the Attach Files button
     Then The user clicks on the save button and verifies the confirmation message
-    When The user clicks on the hamburger menu
+    When The user clicks on the Hamburger menu
     And  The user hovers over the messaging link
     Then The user clicks outbox message and verifies the outbox message list
       | outboxMessage |

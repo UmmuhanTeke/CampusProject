@@ -7,7 +7,7 @@ Feature: Finance Report Management
 
   Scenario: Accessing and downloading finance reports
 
-    Given The user clicks on the hamburger menu
+    Given The user clicks on the Hamburger menu
     When  The user navigates to Finance and then to My Finance
     Then  The user should access the finance page
     When  The user clicks on the Overflow menu for report types
