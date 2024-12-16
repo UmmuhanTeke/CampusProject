@@ -24,9 +24,9 @@ The Environment Used in the Project: [test.mersys.io](https://test.mersys.io/)
   ## Contributors
 | User Stories                                     | Contributor                  |
 |------------------------------------------------|------------------------------|
-| [03-04-07-13-15-17-21] | [Sefa Kahraman](https://github.com/SefaKahramann) |
-| [05-06-09-14-20-24] | [Merve Kaya](https://github.com/kayyamervee) |
-| [02-08-10-16-23-25] | [Ümmühan Teke](https://github.com/UmmuhanTeke) |
+| [03-04-07-12-13-15-17-21] | [Sefa Kahraman](https://github.com/SefaKahramann) |
+| [05-06-09-14-19-20-24] | [Merve Kaya](https://github.com/kayyamervee) |
+| [02-08-10-16-22-23-25] | [Ümmühan Teke](https://github.com/UmmuhanTeke) |
 | [01-18] | [Mert Bilecen](https://github.com/MertBilecen) |
 | [11] | [Songül Çam](https://github.com/songul-cam) |
 
