@@ -99,12 +99,6 @@ public class ReusableMethods {
         new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
     }
 
-    public void selectByText(WebElement element, String text) {
-        wait.until(ExpectedConditions.visibilityOf(element));
-        Select select = new Select(element);
-        select.selectByVisibleText(text);
-    }
-
     public void jsClick(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
         JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
